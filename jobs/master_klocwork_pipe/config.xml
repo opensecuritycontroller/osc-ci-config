@@ -16,18 +16,7 @@ PATH=$PATH:~/kw104/bin:$JAVA_HOME/bin</propertiesContent>
       <overrideBuildParameters>false</overrideBuildParameters>
     </EnvInjectJobProperty>
     <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
-      <triggers>
-        <jenkins.triggers.ReverseBuildTrigger>
-          <spec></spec>
-          <upstreamProjects>osc-core, </upstreamProjects>
-          <threshold>
-            <name>UNSTABLE</name>
-            <ordinal>1</ordinal>
-            <color>YELLOW</color>
-            <completeBuild>true</completeBuild>
-          </threshold>
-        </jenkins.triggers.ReverseBuildTrigger>
-      </triggers>
+      <triggers/>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.19">
@@ -90,7 +79,7 @@ PATH=$PATH:~/kw104/bin:$JAVA_HOME/bin</propertiesContent>
    
    stage(&apos;Build kwmaven&apos;) {
          def workspace = pwd()
-         sh &quot;/home/klocwork/jenkins-run-kw.sh ${WORKSPACE}/osc-core pawel.proskurnicki@intel.com,bartlomiej.kasperowicz@intel.com,bartlomiej.sulich@intel.com,arvind.nadendla@intel.com&quot;
+         sh &quot;/home/klocwork/jenkins-run-kw.sh ${WORKSPACE}/osc-core pawel.proskurnicki@intel.com,bartlomiej.sulich@intel.com,arvind.nadendla@intel.com&quot;
    }
    
    stage(&apos;Publish report&apos;) {
