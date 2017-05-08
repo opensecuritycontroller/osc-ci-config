@@ -246,7 +246,7 @@ node(&apos;master&apos;) {
         if(skip_ovf_build == &quot;true&quot;){
             echo &apos;Skipped&apos;
         } else {
-            sh &apos;cd &apos;+outputDir+&apos;; sudo rm `ls &apos;+outputDir+&apos; -t | awk \&apos;NR&gt;4\&apos;` -rf&apos;
+            sh &apos;cd &apos;+outputDir+&apos;; sudo rm `ls &apos;+outputDir+&apos; -t | awk \&apos;/Build/\&apos; | awk \&apos;NR&gt;4\&apos;` -rf&apos;
         }
     }
     
