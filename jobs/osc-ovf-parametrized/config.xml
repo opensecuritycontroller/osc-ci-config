@@ -107,7 +107,7 @@ node(&apos;master&apos;) {
     		try {
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
     		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
+                git branch: &apos;${default_branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
             }
         }
         if(force_clean_workspace == &quot;true&quot;){
@@ -117,7 +117,7 @@ node(&apos;master&apos;) {
     		try {
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-plugin.git&apos;
     		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-plugin.git&apos;
+                git branch: &apos;${default_branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-plugin.git&apos;
             }
         }
     	
@@ -128,7 +128,7 @@ node(&apos;master&apos;) {
     		try {
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-api.git&apos;
     		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-api.git&apos;
+                git branch: &apos;${default_branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-api.git&apos;
             }
         }
     	
@@ -139,7 +139,7 @@ node(&apos;master&apos;) {
     		try {
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
     		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
+                git branch: &apos;${default_branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
             }
         }
     	
@@ -150,7 +150,7 @@ node(&apos;master&apos;) {
     		try {
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
     		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
+                git branch: &apos;${default_branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
             }
         }
     	
@@ -161,7 +161,7 @@ node(&apos;master&apos;) {
     		try {
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
     		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
+                git branch: &apos;${default_branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
             }
         }
     	if(force_clean_workspace == &quot;true&quot;){
@@ -171,7 +171,7 @@ node(&apos;master&apos;) {
     		try {
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
     		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
+                git branch: &apos;${default_branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
             }
         }
     	if(force_clean_workspace == &quot;true&quot;){
@@ -181,7 +181,7 @@ node(&apos;master&apos;) {
     		try {
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
     		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
+                git branch: &apos;${default_branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
             }
         }
     	
@@ -192,7 +192,7 @@ node(&apos;master&apos;) {
     		try {
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
     		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
+                git branch: &apos;${default_branch}&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
             }
         }
     }
