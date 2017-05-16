@@ -42,7 +42,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>pybot -d results -v testbed:kodali.robot VC.robot</command>
+      <command>pybot -d results -v testbed:Kodali.robot VC.robot</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
