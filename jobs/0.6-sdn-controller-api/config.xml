@@ -46,7 +46,7 @@
     <groupId>org.osc.api</groupId>
     <artifactId>sdn-controller-api</artifactId>
   </rootModule>
-  <goals>clean install deploy</goals>
+  <goals>clean deploy</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>false</ignoreUpstremChanges>
