@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <flow-definition plugin="workflow-job@2.7">
   <actions/>
-  <description></description>
+  <description>Klocwork report for version 0.6</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <EnvInjectJobProperty plugin="envinject@1.93.1">
@@ -32,47 +32,47 @@ PATH=$PATH:~/kw104/bin:$JAVA_HOME/bin</propertiesContent>
         
         sh &apos;mkdir -p osc-core&apos;
         dir (&apos;osc-core&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
+            git branch: &apos;0.6&apos;, credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
         }
         
         sh &apos;mkdir -p vmware-nsx-plugin&apos;
         dir (&apos;vmware-nsx-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-plugin.git&apos;
+            git branch: &apos;0.6&apos;,  credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-plugin.git&apos;
         }
 		
 		sh &apos;mkdir -p vmware-nsx-api&apos;
         dir (&apos;vmware-nsx-api&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-api.git&apos;
+            git branch: &apos;0.6&apos;,  credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-api.git&apos;
         }
 		
 		sh &apos;mkdir -p security-mgr-smc-plugin&apos;
         dir (&apos;security-mgr-smc-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
+            git branch: &apos;0.6&apos;,  credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
         }
 		
 		sh &apos;mkdir -p security-mgr-sample-plugin&apos;
         dir (&apos;security-mgr-sample-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
+            git branch: &apos;0.6&apos;,  credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
         }
 		
 		sh &apos;mkdir -p security-mgr-nsm-plugin&apos;
         dir (&apos;security-mgr-nsm-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
+            git branch: &apos;0.6&apos;,  credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
         }
 		
 		sh &apos;mkdir -p security-mgr-api&apos;
         dir (&apos;security-mgr-api&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
+            git branch: &apos;0.6&apos;,  credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
         }
 		
 		sh &apos;mkdir -p sdn-controller-api&apos;
         dir (&apos;sdn-controller-api&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
+            git branch: &apos;0.6&apos;,  credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
         }
 		
 		sh &apos;mkdir -p sdn-controller-nsc-plugin&apos;
         dir (&apos;sdn-controller-nsc-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
+            git branch: &apos;0.6&apos;,  credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
         }
 		
    }
@@ -83,7 +83,7 @@ PATH=$PATH:~/kw104/bin:$JAVA_HOME/bin</propertiesContent>
    }
    
    stage(&apos;Publish report&apos;) {
-       publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: &apos;osc-core/build-reports/&apos;, reportFiles: &apos;kw.html&apos;, reportName: &apos;Klocwork issues report&apos;])
+       publishHTML([allowMissing: false, alwaysLinkToLastBuild: true, keepAll: false, reportDir: &apos;osc-core/build-reports/&apos;, reportFiles: &apos;kw.html&apos;, reportName: &apos;Klocwork issues report for 0.6 version&apos;])
    }
 }</script>
     <sandbox>true</sandbox>
