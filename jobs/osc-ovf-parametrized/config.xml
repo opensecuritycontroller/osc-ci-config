@@ -196,6 +196,10 @@ node(&apos;master&apos;) {
             }
         }
     }
+    
+    stage(&apos;Copy JVM&apos;) {
+       sh &quot;cp /var/tmp/jre-8u112-linux-x64.tar.gz ${WORKSPACE}/osc-core/osc-server-bom/Sources/jre-8u112-linux-x64.tar.gz&quot;
+    }
 
     stage(&apos;Run junit tests&apos;) {
         if(enable_junit_tests == &quot;true&quot;) {
