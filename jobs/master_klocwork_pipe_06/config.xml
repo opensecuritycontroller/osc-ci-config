@@ -78,9 +78,8 @@ PATH=$PATH:~/kw104/bin:$JAVA_HOME/bin</propertiesContent>
    }
    
    stage(&apos;Copy JVM&apos;) {
-       sh &quot;cp /home/klocwork/jre-8u112-linux-x64.tar.gz ${WORKSPACE}/osc-core/osc-server-bom/Sources/jre-8u112-linux-x64.tar.gz&quot;
-       
-   }
+       sh &quot;cp /home/klocwork/jre-8u131-linux-x64.tar.gz ${WORKSPACE}/osc-core/osc-server-bom/Sources/jre-8u131-linux-x64.tar.gz&quot;
+    }
    
    stage(&apos;Build kwmaven&apos;) {
          def workspace = pwd()
