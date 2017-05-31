@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Clean Test bed environment&#xd;
-Deploy the new OSC in master build</description>
+  <description>Clean Testbed Environment&#xd;
+Deploy the new OSC from master build</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <jenkins.model.BuildDiscarderProperty>
@@ -54,7 +54,7 @@ Deploy the new OSC in master build</description>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>outputDir=/var/www/vsc-builds/0.6-all/
+      <command>outputDir=/var/www/vsc-builds/master-all/
 echo outputDir $outputDir
 buildVersion=`ls -t $outputDir | awk &apos;NR=1&apos; | head -1`
 echo buildVersion $buildVersion
