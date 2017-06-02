@@ -13,12 +13,12 @@
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.2.0">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <url>https://github.com/arvindn05/osc-pan-plugin.git</url>
-        <credentialsId>31980f75-623f-4ef9-b94c-80c148765b15</credentialsId>
+        <credentialsId>oscservice-token</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
@@ -142,7 +142,7 @@
     </hudson.maven.reporters.MavenMailer>
   </reporters>
   <publishers>
-    <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.45">
+    <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.57.2">
       <recipientList>arvind.nadendla@intel.com;emanoel.xavier@intel.com</recipientList>
       <configuredTriggers>
         <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
