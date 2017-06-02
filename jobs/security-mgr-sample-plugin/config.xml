@@ -18,7 +18,7 @@
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <url>https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git</url>
-        <credentialsId>31980f75-623f-4ef9-b94c-80c148765b15</credentialsId>
+        <credentialsId>oscservice-token</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
