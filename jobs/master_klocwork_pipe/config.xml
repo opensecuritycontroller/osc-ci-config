@@ -20,8 +20,7 @@ PATH=$PATH:~/kw104/bin:$JAVA_HOME/bin</propertiesContent>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.19">
-    <script>oscservice-token
-node(&apos;klocwork&apos;) {
+    <script>node(&apos;klocwork&apos;) {
     
     stage(&apos;Preparation&apos;) {
         
