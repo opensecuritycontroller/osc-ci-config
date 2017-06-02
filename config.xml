@@ -315,7 +315,6 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
-        <string>arv-github-2fa-test</string>
         <string>osc-sdk-nexus-push</string>
       </jobNames>
       <jobFilters/>
