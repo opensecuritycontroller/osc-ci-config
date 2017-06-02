@@ -315,6 +315,7 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>arv-github-2fa-test</string>
         <string>osc-sdk-nexus-push</string>
       </jobNames>
       <jobFilters/>
@@ -339,7 +340,6 @@
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>master_klocwork_pipe</string>
         <string>osc-core</string>
-        <string>osc-core-test</string>
         <string>osc-ovf</string>
         <string>osc-ovf-all</string>
         <string>osc_ovf_master_bkp</string>
