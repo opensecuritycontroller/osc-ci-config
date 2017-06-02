@@ -20,7 +20,8 @@ PATH=$PATH:~/kw104/bin:$JAVA_HOME/bin</propertiesContent>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.19">
-    <script>node(&apos;klocwork&apos;) {
+    <script>oscservice-token
+node(&apos;klocwork&apos;) {
     
     stage(&apos;Preparation&apos;) {
         
@@ -32,47 +33,47 @@ PATH=$PATH:~/kw104/bin:$JAVA_HOME/bin</propertiesContent>
         
         //sh &apos;mkdir -p osc-core&apos;
         dir (&apos;osc-core&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
         }
         
         //sh &apos;mkdir -p vmware-nsx-plugin&apos;
         dir (&apos;vmware-nsx-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-plugin.git&apos;
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-plugin.git&apos;
         }
 		
 		//sh &apos;mkdir -p vmware-nsx-api&apos;
         dir (&apos;vmware-nsx-api&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-api.git&apos;
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/vmware-nsx-api.git&apos;
         }
 		
 		//sh &apos;mkdir -p security-mgr-smc-plugin&apos;
         dir (&apos;security-mgr-smc-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
         }
 		
 		//sh &apos;mkdir -p security-mgr-sample-plugin&apos;
         dir (&apos;security-mgr-sample-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
         }
 		
 		//sh &apos;mkdir -p security-mgr-nsm-plugin&apos;
         dir (&apos;security-mgr-nsm-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
         }
 		
 		//sh &apos;mkdir -p security-mgr-api&apos;
         dir (&apos;security-mgr-api&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
         }
 		
 		//sh &apos;mkdir -p sdn-controller-api&apos;
         dir (&apos;sdn-controller-api&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
         }
 		
 		//sh &apos;mkdir -p sdn-controller-nsc-plugin&apos;
         dir (&apos;sdn-controller-nsc-plugin&apos;) {
-            git credentialsId: &apos;31980f75-623f-4ef9-b94c-80c148765b15&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
         }
 		
    }
