@@ -18,7 +18,6 @@
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
         <url>https://github.com/opensecuritycontroller/sdn-controller-api.git</url>
-        <credentialsId>31980f75-623f-4ef9-b94c-80c148765b15</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
