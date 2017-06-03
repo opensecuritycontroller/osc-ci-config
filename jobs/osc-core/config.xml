@@ -196,9 +196,9 @@
           <reportName>Jacoco Code coverage</reportName>
           <reportDir>osc-server/target/site/jacoco-ut/</reportDir>
           <reportFiles>index.html</reportFiles>
-          <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
+          <alwaysLinkToLastBuild>true</alwaysLinkToLastBuild>
           <keepAll>false</keepAll>
-          <allowMissing>false</allowMissing>
+          <allowMissing>true</allowMissing>
         </htmlpublisher.HtmlPublisherTarget>
       </reportTargets>
     </htmlpublisher.HtmlPublisher>
