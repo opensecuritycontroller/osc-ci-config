@@ -190,6 +190,18 @@
       <maximumClassCoverage>0</maximumClassCoverage>
       <changeBuildStatus>true</changeBuildStatus>
     </hudson.plugins.jacoco.JacocoPublisher>
+    <htmlpublisher.HtmlPublisher plugin="htmlpublisher@1.11">
+      <reportTargets>
+        <htmlpublisher.HtmlPublisherTarget>
+          <reportName>Jacoco Code coverage</reportName>
+          <reportDir>osc-server/target/site/jacoco-ut/</reportDir>
+          <reportFiles>index.html</reportFiles>
+          <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
+          <keepAll>false</keepAll>
+          <allowMissing>false</allowMissing>
+        </htmlpublisher.HtmlPublisherTarget>
+      </reportTargets>
+    </htmlpublisher.HtmlPublisher>
     <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.57.2">
       <recipientList>arvind.nadendla@intel.com;emanoel.xavier@intel.com</recipientList>
       <configuredTriggers>
