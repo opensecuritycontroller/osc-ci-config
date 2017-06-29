@@ -73,7 +73,7 @@ PATH=$PATH:~/klocwork/kw2016-3/bin:$JAVA_HOME/bin</propertiesContent>
    
    stage(&apos;Build kwmaven&apos;) {
          def workspace = pwd()
-         sh &quot;/home/ubuntu/jenkins-run-kw.sh ${WORKSPACE}/osc-core pawel.proskurnicki@intel.com,bartlomiej.sulich@intel.com,arvind.nadendla@intel.com osc&quot;
+         sh &quot;/home/ubuntu/jenkins-run-kw.sh ${WORKSPACE}/osc-core arvind.nadendla@intel.com osc&quot;
    }
    
    stage(&apos;Publish report&apos;) {
