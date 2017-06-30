@@ -41,12 +41,12 @@
         <hudson.model.BooleanParameterDefinition>
           <name>enable_web_tests</name>
           <description>Run serenity tests</description>
-          <defaultValue>true</defaultValue>
+          <defaultValue>false</defaultValue>
         </hudson.model.BooleanParameterDefinition>
         <hudson.model.BooleanParameterDefinition>
           <name>run_robot_tests</name>
           <description>Run robot framework tests</description>
-          <defaultValue>true</defaultValue>
+          <defaultValue>false</defaultValue>
         </hudson.model.BooleanParameterDefinition>
         <hudson.model.BooleanParameterDefinition>
           <name>force_clean_workspace</name>
