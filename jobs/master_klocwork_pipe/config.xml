@@ -6,8 +6,8 @@
   <properties>
     <EnvInjectJobProperty plugin="envinject@1.93.1">
       <info>
-        <propertiesContent>JAVA_HOME=/home/ubuntu/jdk1.8.0_121
-PATH=$PATH:~/klocwork/kw2016-3/bin:$JAVA_HOME/bin</propertiesContent>
+        <propertiesContent>JAVA_HOME=/home/jenkins/jdk1.8.0_121
+PATH=$PATH:/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</propertiesContent>
         <loadFilesFromMaster>false</loadFilesFromMaster>
       </info>
       <on>true</on>
