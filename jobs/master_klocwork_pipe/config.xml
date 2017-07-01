@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<flow-definition plugin="workflow-job@2.7">
+<flow-definition plugin="workflow-job@2.11.1">
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
@@ -19,13 +19,13 @@ PATH=$PATH:/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</pr
       <triggers/>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
-  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.19">
-    <script>node(&apos;robotslave&apos;) {
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.36">
+    <script>node(&apos;master&apos;) {
     
     stage(&apos;Preparation&apos;) {
         
-        sh &apos;git config --global http.proxy http://proxy-mu.intel.com:911&apos;
-		sh &apos;git config --global https.proxy http://proxy-mu.intel.com:912&apos;
+        sh &apos;git config --global http.proxy http://proxy-us.intel.com:911&apos;
+		sh &apos;git config --global https.proxy http://proxy-us.intel.com:912&apos;
 		sh &apos;git config --global no.proxy intel.com,.intel.com,10.0.0.0/8,192.168.0.0/16,localhost,127.0.0.0/8,134.134.0.0/16&apos;
         
         //sh &apos;rm * -rf&apos;
@@ -34,20 +34,10 @@ PATH=$PATH:/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</pr
         dir (&apos;osc-core&apos;) {
             git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
         }
-        
-		//sh &apos;mkdir -p security-mgr-smc-plugin&apos;
-        dir (&apos;security-mgr-smc-plugin&apos;) {
-            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
-        }
 		
 		//sh &apos;mkdir -p security-mgr-sample-plugin&apos;
         dir (&apos;security-mgr-sample-plugin&apos;) {
             git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
-        }
-		
-		//sh &apos;mkdir -p security-mgr-nsm-plugin&apos;
-        dir (&apos;security-mgr-nsm-plugin&apos;) {
-            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
         }
 		
 		//sh &apos;mkdir -p security-mgr-api&apos;
@@ -68,12 +58,12 @@ PATH=$PATH:/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</pr
    }
    
     stage(&apos;Copy JVM&apos;) {
-       sh &quot;cp /home/ubuntu/jre-8u131-linux-x64.tar.gz ${WORKSPACE}/osc-core/osc-server-bom/Sources/jre-8u131-linux-x64.tar.gz&quot;
+       sh &quot;cp /home/jenkins/jre-8u131-linux-x64.tar.gz ${WORKSPACE}/osc-core/osc-server-bom/Sources/jre-8u131-linux-x64.tar.gz&quot;
     }
    
    stage(&apos;Build kwmaven&apos;) {
          def workspace = pwd()
-         sh &quot;/home/ubuntu/jenkins-run-kw.sh ${WORKSPACE}/osc-core arvind.nadendla@intel.com osc&quot;
+         sh &quot;/home/jenkins/jenkins-run-kw.sh ${WORKSPACE}/osc-core arvind.nadendla@intel.com osc&quot;
    }
    
    stage(&apos;Publish report&apos;) {
@@ -83,4 +73,5 @@ PATH=$PATH:/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</pr
     <sandbox>true</sandbox>
   </definition>
   <triggers/>
+  <disabled>false</disabled>
 </flow-definition>
