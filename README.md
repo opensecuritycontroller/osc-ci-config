@@ -1,2 +1,2 @@
 # osc-ci-config
-Contains Jenkins CI configuration
+Contains Jenkins CI configuration.
