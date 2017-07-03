@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<flow-definition plugin="workflow-job@2.7">
+<flow-definition plugin="workflow-job@2.11.1">
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
@@ -27,9 +27,6 @@
             <a class="string-array">
               <string>common</string>
               <string>nodeploy</string>
-              <string>pawel</string>
-              <string>bartek_k</string>
-              <string>bartek_s</string>
             </a>
           </choices>
         </hudson.model.ChoiceParameterDefinition>
@@ -84,10 +81,10 @@
       <triggers/>
     </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
   </properties>
-  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.19">
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.36">
     <script>def buildVersion = &quot;&quot;
 def outputDir = &quot;/var/www/vsc-builds/osc-ovf-parametrized/&quot;
-def robotFrameworkTestsDir = &quot;/home/klocwork/repos/robottests/&quot;
+def robotFrameworkTestsDir = &quot;/home/jenkins/repos/robottests/&quot;
 def OSC_VM_IP=&apos;&apos;
 	
 node(&apos;master&apos;) {
@@ -242,18 +239,7 @@ node(&apos;master&apos;) {
             sh &apos;cd &apos;+outputDir+&apos;; sudo rm `ls &apos;+outputDir+&apos; -t | awk \&apos;/Build/\&apos; | awk \&apos;NR&gt;4\&apos;` -rf&apos;
         }
     }
-    
-}
-
-node (&apos;klocwork&apos;){
-	
-	stage(&apos;ENV setup klocwork&apos;) {
-        env.JAVA_HOME=&quot;/home/klocwork/jdk1.8.0_121&quot;
-        env.ROBOT=&quot;/home/klocwork/.local/bin&quot;
-        env.PATH=&quot;${env.JAVA_HOME}/bin:${env.ROBOT}:${env.PATH}&quot;
-        echo &quot;Setting JAVA_HOME, Robot framework, path&quot;
-    }
-
+ 
 	stage(&apos;Fetch OVF from Jenkins&apos;) {
 	    if(skip_ovf_build == &quot;true&quot; || deploy == &quot;nodeploy&quot;) {
             echo &quot;Skipped&quot;
@@ -273,50 +259,32 @@ node (&apos;klocwork&apos;){
             echo &quot;Deploy on ${deploy}&quot;
 
             // vSphere/vCenter settings
-            def VSPHERE_SDK_URL = &apos;https://10.91.116.191/sdk&apos;
+            def VSPHERE_SDK_URL = &apos;https://XX.XX.XXX.XXX/sdk&apos;
             def VSPHERE_USER = &apos;root&apos;
             def VSPHERE_PASSWORD = &apos;vmware&apos;
             
             // VM deployment settings
-            def ESXI_HOST_IP = &apos;10.91.116.173&apos;
+            def ESXI_HOST_IP = &apos;XX.XX.XXX.XXX&apos;
             def DATASTORE_NAME = &apos;Data&apos;
             def NETWORK_NAME = &apos;VM Network&apos;
             
 			def OSC_VM_NAME=&apos;&apos;
 			def OSC_VM_NETMASK=&apos;255.255.254.0&apos;
-			def OSC_VM_GATEWAY=&apos;10.91.116.1&apos;
+			def OSC_VM_GATEWAY=&apos;XX.XX.XXX.X&apos;
 			def OSC_VM_DNS=&apos;10.102.60.20 10.102.60.30&apos;
 
             switch (deploy) {
-                 case &quot;pawel&quot;: 
-                    echo &quot;Using Pawel settings&quot;
-                    // OSC VM settings
-                    OSC_VM_NAME=&apos;OSC_pproskur&apos;
-                    OSC_VM_IP=&apos;10.91.117.229&apos;
-                break
-                 case &quot;bartek_k&quot;: 
-                    echo &quot;Using Bartek Kasperowicz settings&quot;
-                    // OSC VM settings
-                    OSC_VM_NAME=&apos;OSC_bkasperowicz&apos;
-                    OSC_VM_IP=&apos;10.91.117.224&apos;
-                 break
-                 case &quot;bartek_s&quot;: 
-                    echo &quot;Using Bartek Sulich settings&quot;
-                    // OSC VM settings
-                    OSC_VM_NAME=&apos;OSC_bsulich&apos;
-                    OSC_VM_IP=&apos;10.91.117.223&apos;
-                 break
                  case &quot;common&quot;: 
                     echo &quot;Using universal machine settings&quot;
                     // OSC VM settings
                     OSC_VM_NAME=&apos;OSC_common&apos;
-                    OSC_VM_IP=&apos;10.91.117.230&apos;
+                    OSC_VM_IP=&apos;XX.XX.XXX.XXX&apos;
                  break
             }
             if(skip_ovf_build == &quot;false&quot;){
                 def OVF_LOCAL_PATH = env.WORKSPACE + &apos;/ovf/OSC-&apos; + buildVersion[5..-1]+ &apos;.ovf&apos;
 
-                sh &apos;java -jar /home/klocwork/repos/osc-tools/deploy-ovf/target/deploy-ovf.jar &apos;+VSPHERE_SDK_URL+&apos; &apos;+VSPHERE_USER+&apos; &apos;+VSPHERE_PASSWORD+&apos; &apos;+ESXI_HOST_IP+&apos; &apos;+ OVF_LOCAL_PATH +&apos; &apos;+OSC_VM_NAME+&apos; &apos;+DATASTORE_NAME+&apos; &quot;&apos;+NETWORK_NAME+&apos;&quot; &apos;+OSC_VM_IP+&apos; &apos;+OSC_VM_NETMASK+&apos; &apos;+OSC_VM_GATEWAY+&apos; &quot;&apos;+OSC_VM_DNS+&apos;&quot;&apos; 
+                sh &apos;java -jar /home/jenkins/repos/osc-tools/deploy-ovf/target/deploy-ovf.jar &apos;+VSPHERE_SDK_URL+&apos; &apos;+VSPHERE_USER+&apos; &apos;+VSPHERE_PASSWORD+&apos; &apos;+ESXI_HOST_IP+&apos; &apos;+ OVF_LOCAL_PATH +&apos; &apos;+OSC_VM_NAME+&apos; &apos;+DATASTORE_NAME+&apos; &quot;&apos;+NETWORK_NAME+&apos;&quot; &apos;+OSC_VM_IP+&apos; &apos;+OSC_VM_NETMASK+&apos; &apos;+OSC_VM_GATEWAY+&apos; &quot;&apos;+OSC_VM_DNS+&apos;&quot;&apos; 
 				sh &apos;rm ovf -rf&apos;
             }
             
@@ -334,7 +302,7 @@ node (&apos;klocwork&apos;){
 			INTERVAL=30
 			MAX_RETRY_NUMBER=10
 
-			sh &apos;java -jar /home/klocwork/osc-tools/check-machine.jar &apos;+OSC_VM_IP+&apos; &apos;+OSC_API_PORT+&apos; &apos;+INTERVAL+&apos; &apos;+MAX_RETRY_NUMBER
+			sh &apos;java -jar /home/jenkins/osc-tools/check-machine.jar &apos;+OSC_VM_IP+&apos; &apos;+OSC_API_PORT+&apos; &apos;+INTERVAL+&apos; &apos;+MAX_RETRY_NUMBER
 		}
 	}
 	
@@ -343,13 +311,13 @@ node (&apos;klocwork&apos;){
 			echo &apos;Skipped run serenity tests&apos;
 		} else {
 			env.DISPLAY=&apos;:0&apos;
-			sh &apos;sed -ie \&apos;s|webdriver.base.url=.*|webdriver.base.url=https://&apos;+OSC_VM_IP+&apos;/|g\&apos; /home/klocwork/repos/osc-tools/automated-tests/serenity.properties&apos;
+			sh &apos;sed -ie \&apos;s|webdriver.base.url=.*|webdriver.base.url=https://&apos;+OSC_VM_IP+&apos;/|g\&apos; /home/jenkins/repos/osc-tools/automated-tests/serenity.properties&apos;
 			sh &apos;xhost +localhost&apos;
 			try {
-			    sh &apos;mvn clean install -f /home/klocwork/repos/osc-tools/automated-tests/&apos;
+			    sh &apos;mvn clean install -f /home/jenkins/repos/osc-tools/automated-tests/&apos;
 			} finally {
 			    sh &apos;rm serenity/ -rf&apos;
-			    sh &apos;mv /home/klocwork/repos/osc-tools/automated-tests/target/site/serenity $WORKSPACE/&apos;
+			    sh &apos;mv /home/jenkins/repos/osc-tools/automated-tests/target/site/serenity $WORKSPACE/&apos;
 				stash name: &quot;serenity-output&quot;, includes: &quot;serenity/**/*&quot;
 				
 				node(&apos;master&apos;) {
@@ -418,13 +386,14 @@ node (&apos;klocwork&apos;){
 			echo &quot;Skipped test environment reset&quot;
 		} else {
 			echo &quot;Reverting test environment to zero configuration...&quot;
-			sh &apos;java -jar /home/klocwork/osc-tools/revert-snapshot/revert-snapshot.jar /home/klocwork/osc-tools/revert-snapshot/config.json&apos;
+			sh &apos;java -jar /home/jenkins/osc-tools/revert-snapshot/revert-snapshot.jar /home/klocwork/osc-tools/revert-snapshot/config.json&apos;
 			// echo &quot;Waiting for openstack to get up...&quot;
 			// sh &apos;python /home/klocwork/osc-tools/check-openstack-health/check-openstack-health.py&apos;
 		}
-	}
+	}   
 }</script>
     <sandbox>true</sandbox>
   </definition>
   <triggers/>
+  <disabled>false</disabled>
 </flow-definition>
