@@ -75,6 +75,11 @@
           <description>Github username which has forked main project</description>
           <defaultValue>opensecuritycontroller</defaultValue>
         </hudson.model.StringParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>do_use_smc</name>
+          <description>Build security-mgr-smc-plugin</description>
+          <defaultValue>false</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
     <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
