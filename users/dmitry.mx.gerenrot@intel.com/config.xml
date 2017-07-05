@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <user>
   <fullName>dmitry gerenrot</fullName>
+  <description></description>
   <properties>
     <jenkins.security.ApiTokenProperty>
       <apiToken>+p5ARqxG1HZ3Z3HRfofV9QjFLkM6Rk3k9QCCLgoUXu7U/MDv5CQSRsiZYXL6DzKL</apiToken>
@@ -8,10 +9,20 @@
     <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.14">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.20">
+      <emailAddress>dmitry.mx.gerenrot@intel.com</emailAddress>
+    </hudson.tasks.Mailer_-UserProperty>
     <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.58">
       <triggers/>
     </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
+    <jenkins.security.LastGrantedAuthoritiesProperty>
+      <roles>
+        <string>authenticated</string>
+      </roles>
+      <timestamp>1499274460459</timestamp>
+    </jenkins.security.LastGrantedAuthoritiesProperty>
     <hudson.model.MyViewsProperty>
+      <primaryViewName></primaryViewName>
       <views>
         <hudson.model.AllView>
           <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
@@ -28,20 +39,26 @@
     <hudson.model.PaneStatusProperties>
       <collapsed/>
     </hudson.model.PaneStatusProperties>
-    <hudson.search.UserSearchProperty>
-      <insensitiveSearch>false</insensitiveSearch>
-    </hudson.search.UserSearchProperty>
     <hudson.security.HudsonPrivateSecurityRealm_-Details>
       <passwordHash>#jbcrypt:$2a$10$KslLoyxf2xjk5Ifcb4BRWOoQbAB/svtQyk39A9ltXlO3AFtRzpOw.</passwordHash>
     </hudson.security.HudsonPrivateSecurityRealm_-Details>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.20">
-      <emailAddress>dmitry.mx.gerenrot@intel.com</emailAddress>
-    </hudson.tasks.Mailer_-UserProperty>
-    <jenkins.security.LastGrantedAuthoritiesProperty>
-      <roles>
-        <string>authenticated</string>
-      </roles>
-      <timestamp>1499274460459</timestamp>
-    </jenkins.security.LastGrantedAuthoritiesProperty>
+    <org.jenkinsci.main.modules.cli.auth.ssh.UserPropertyImpl>
+      <authorizedKeys>Comment: &quot;rsa-key-20170629&quot;
+AAAAB3NzaC1yc2EAAAABJQAAAgEA4VJQhy/HCFagLNee0Rtylmen8REh6JFbJ18Q
+xaztKvn8aI9ztrYR6dZTH/IVi9hpTec8VTbWhQqooKOXF0AXZh/DWPQ9cEHvVvSA
+coAvQXsePLFqGlIhbj644mSBGOoFa31mKjcFIDDvmkWvuNbBCH424FQBZjmOIenM
+MlBok217OEMwvMQNttr2OfSdsOgI9KyseRLgCh1rXjmtGXa2VaWDKpQDT5u7KnyB
+ZXQpKB3jMx9T7s32YzuBrgYwzzAzvyAd65oUAoqanMWln9VxXbhcTLJF820LqE81
+NgJCW37BlAlACgJbo7Jaa8jgbX7/Ba7vGB9zMcpwG2EeqD3UqAZ0qQBfAUtaT1oF
+T4E1JkQgb6qGI11DshI6b+Dp25bq7XAI/yQ/lo58sxgVSw57RZhRyP9WX/Lr1LCc
+AcnQtFM0LCdwT7g+LWgKQWzCD1KWzrmfJP45TNbzK4/W4x/8BIjnIb4v+40IOeEa
+2dIKJzarAilz2NKsujEwZ8V31L5+AVUM2H1tRgeIyxOVXrZHGdnR1FlYIWtuyXXQ
+DYVgQRWwlPAFq+vqhs7g1au9+UfEpuIkJgjqaC1Ji1MNq53i/Ro7+rKlmjuy509z
+cIrnio3In51xZFl0o5KjmxzaVjIl1tGCMEC9d0WxF2Noq9QdI6qXg1/Jo/molp4r
+XfItI78=</authorizedKeys>
+    </org.jenkinsci.main.modules.cli.auth.ssh.UserPropertyImpl>
+    <hudson.search.UserSearchProperty>
+      <insensitiveSearch>false</insensitiveSearch>
+    </hudson.search.UserSearchProperty>
   </properties>
 </user>
