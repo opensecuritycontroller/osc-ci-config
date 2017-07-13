@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <user>
-  <fullName>Dmitry Gerenrot</fullName>
+  <fullName>dgerenrx</fullName>
   <properties>
     <jenkins.security.ApiTokenProperty>
       <apiToken>eviZdm3tTJyWYU7gzuNkHViVGJi5Rbwnp0/PjRvNSeLU/MDv5CQSRsiZYXL6DzKL</apiToken>
     </jenkins.security.ApiTokenProperty>
-    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.13">
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.14">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
-    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.57.2">
+    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.58">
       <triggers/>
     </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
     <hudson.model.MyViewsProperty>
@@ -31,11 +31,8 @@
     <hudson.search.UserSearchProperty>
       <insensitiveSearch>false</insensitiveSearch>
     </hudson.search.UserSearchProperty>
-    <hudson.security.HudsonPrivateSecurityRealm_-Details>
-      <passwordHash>#jbcrypt:$2a$10$9Z88FwanducxjeteA6lFq.b8U.lWzBAUTTnkYZwIzWxp2Yb84eYji</passwordHash>
-    </hudson.security.HudsonPrivateSecurityRealm_-Details>
     <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.20">
-      <emailAddress>dmitry.mx.gerenrot@intel.com</emailAddress>
+      <emailAddress>dgerenrx@dgerenrx-MOBL1.amr.corp.intel.com</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
   </properties>
 </user>
