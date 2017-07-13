@@ -61,7 +61,7 @@
         sh &apos;mkdir -p osc-core&apos;
         dir (&apos;osc-core&apos;) {
     		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
+    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/arvindn05/osc-core.git&apos;
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
             }
