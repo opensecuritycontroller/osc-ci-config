@@ -63,7 +63,7 @@
         <hudson.model.BooleanParameterDefinition>
           <name>do_use_smc_plugin</name>
           <description>Build security-mgr-smc-plugin</description>
-          <defaultValue>true</defaultValue>
+          <defaultValue>false</defaultValue>
         </hudson.model.BooleanParameterDefinition>
         <hudson.model.BooleanParameterDefinition>
           <name>all</name>
