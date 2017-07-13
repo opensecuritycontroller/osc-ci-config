@@ -78,7 +78,7 @@
         <hudson.model.StringParameterDefinition>
           <name>fork</name>
           <description>Github username which has forked main project</description>
-          <defaultValue>opensecuritycontroller</defaultValue>
+          <defaultValue>dmitryintel</defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
