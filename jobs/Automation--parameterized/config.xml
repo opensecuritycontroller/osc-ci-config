@@ -124,9 +124,9 @@
       <runAfterResultFinalised>true</runAfterResultFinalised>
     </com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier>
     <hudson.tasks.Mailer plugin="mailer@1.20">
-      <recipients>lakshminarayana.kodali@intel.com</recipients>
+      <recipients>dmitry.mx.gerenrot@intel.com</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
-      <sendToIndividuals>false</sendToIndividuals>
+      <sendToIndividuals>true</sendToIndividuals>
     </hudson.tasks.Mailer>
   </publishers>
   <buildWrappers/>
