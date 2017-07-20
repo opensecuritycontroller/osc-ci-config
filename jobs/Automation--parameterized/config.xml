@@ -12,6 +12,40 @@
         <artifactNumToKeep>-1</artifactNumToKeep>
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>osc-ip</name>
+          <description>IP address of OSC to be used for running automation</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>vc-ip</name>
+          <description>IP address of Virtualization Connector to be used for running automation</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>mc-ip</name>
+          <description>IP address of Manager Connector to be used for running automation</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>robot-file-executed</name>
+          <description></description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>Multiple-Suites.robot</string>
+              <string>VC.robot</string>
+              <string>MC.robot</string>
+              <string>DA.robot</string>
+              <string>DS.robot</string>
+              <string>SG.robot</string>
+              <string>SG-Binding.robot</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
   </properties>
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.8">
     <locations>
@@ -42,10 +76,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>#pybot -d results -v testbed:104.robot -v ip-osc:10.3.136.174 -v ip-vc:10.3.240.173 -v ip-mc:10.3.240.166 MC.robot
-
-
-pybot -d results -v testbed:104.robot -v ip-osc:10.3.240.14 -v ip-vc:10.3.240.173 -v ip-mc:10.3.240.172 MC.robot</command>
+      <command>pybot -d results -v testbed:104.robot -v ip-osc:${osc-ip} -v ip-vc::${vc-ip} -v ip-mc::${mc-ip} ${robot-file-executed}</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
