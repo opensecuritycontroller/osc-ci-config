@@ -15,7 +15,7 @@
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <hudson.model.StringParameterDefinition>
-          <name>OSC-IP</name>
+          <name>OscIP</name>
           <description>IP address of OSC to be used for running automation</description>
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
@@ -25,7 +25,7 @@
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
-          <name>mc-ip</name>
+          <name>McIP</name>
           <description>IP address of Manager Connector to be used for running automation</description>
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
@@ -76,7 +76,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>pybot -d results -v testbed:104.robot -v ip-osc:${OSC-IP} -v ip-vc::${VcIP} -v ip-mc::${mc-ip} ${robot-file-executed}</command>
+      <command>pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc::${VcIP} -v ip-mc::${McIP} ${robot-file-executed}</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
