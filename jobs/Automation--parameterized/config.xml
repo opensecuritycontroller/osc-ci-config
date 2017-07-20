@@ -76,7 +76,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc::${VcIP} -v ip-mc::${McIP} ${RobotSuite}</command>
+      <command>pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} -v ip-mc:${McIP} ${RobotSuite}</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
