@@ -42,7 +42,10 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>pybot -d results -v testbed:104.robot -v ip-osc:10.3.136.174 -v ip-vc:10.3.240.173 -v ip-mc:10.3.240.166 MC.robot</command>
+      <command>#pybot -d results -v testbed:104.robot -v ip-osc:10.3.136.174 -v ip-vc:10.3.240.173 -v ip-mc:10.3.240.166 MC.robot
+
+
+pybot --d results -v testbed:104.robot -v ip-osc:10.3.240.14 -v ip-vc:10.3.240.173 -v ip-mc:10.3.241.72 MC.robot</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
