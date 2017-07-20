@@ -366,6 +366,7 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>Automation--parameterized</string>
         <string>Automation-parameterized</string>
         <string>osc-image-format</string>
         <string>osc-ovf-parametrized</string>
