@@ -30,7 +30,7 @@
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.ChoiceParameterDefinition>
-          <name>robot-file-executed</name>
+          <name>RobotSuite</name>
           <description></description>
           <choices class="java.util.Arrays$ArrayList">
             <a class="string-array">
@@ -76,7 +76,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc::${VcIP} -v ip-mc::${McIP} ${robot-file-executed}</command>
+      <command>pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc::${VcIP} -v ip-mc::${McIP} ${RobotSuite}</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
