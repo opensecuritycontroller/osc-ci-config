@@ -36,49 +36,29 @@
           <defaultValue>true</defaultValue>
         </hudson.model.BooleanParameterDefinition>
         <hudson.model.BooleanParameterDefinition>
-          <name>enable_web_tests</name>
-          <description>Run serenity tests</description>
-          <defaultValue>false</defaultValue>
-        </hudson.model.BooleanParameterDefinition>
-        <hudson.model.BooleanParameterDefinition>
           <name>run_robot_tests</name>
           <description>Run robot framework tests</description>
           <defaultValue>false</defaultValue>
         </hudson.model.BooleanParameterDefinition>
-        <hudson.model.BooleanParameterDefinition>
-          <name>force_clean_workspace</name>
-          <description>Clean the workspace and clone the repos</description>
-          <defaultValue>false</defaultValue>
-        </hudson.model.BooleanParameterDefinition>
-        <hudson.model.BooleanParameterDefinition>
-          <name>skip_ovf_build</name>
-          <description>Skip building and publishing OVF</description>
-          <defaultValue>false</defaultValue>
-        </hudson.model.BooleanParameterDefinition>
-        <hudson.model.BooleanParameterDefinition>
-          <name>revert_test_environment</name>
-          <description>If true, reverts all VM&apos;s snapshots to zero configuration</description>
-          <defaultValue>false</defaultValue>
-        </hudson.model.BooleanParameterDefinition>
-        <hudson.model.BooleanParameterDefinition>
-          <name>do_use_smc_plugin</name>
-          <description>Build security-mgr-smc-plugin</description>
-          <defaultValue>false</defaultValue>
-        </hudson.model.BooleanParameterDefinition>
-        <hudson.model.BooleanParameterDefinition>
-          <name>all</name>
-          <description>Perform additional build actions or steps to include extra artifacts such as internal and external plugins.</description>
-          <defaultValue>true</defaultValue>
-        </hudson.model.BooleanParameterDefinition>
         <hudson.model.StringParameterDefinition>
           <name>default_branch</name>
-          <description>Default value for building code for version 0.6 / master</description>
+          <description>Default value for building code for version master</description>
           <defaultValue>master</defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.StringParameterDefinition>
-          <name>fork</name>
-          <description>Github username which has forked main project</description>
-          <defaultValue>opensecuritycontroller</defaultValue>
+          <name>osc-ip</name>
+          <description>IP address of OSC</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>vc-ip</name>
+          <description>IP address for Virtualization Connector</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>mc-ip</name>
+          <description>IP address for Manager Connector</description>
+          <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
@@ -190,35 +170,7 @@ node(&apos;master&apos;) {
         }
     }
     
-    stage(&apos;Run junit tests&apos;) {
-        if(enable_junit_tests == &quot;true&quot;) {
-            try{
-                dir (&apos;osc-core&apos;) {
-                    sh &apos;mvn clean install -Dcheckstyle.skip=true -P all&apos;
-                }
-            } finally {
-                step([$class: &quot;JUnitResultArchiver&quot;, testResults: &apos;**/target/surefire-reports/TEST-*.xml, **/target/failsafe-reports/TEST-*.xml&apos;])
-                step([$class: &quot;CheckStylePublisher&quot;,
-                      canComputeNew: false,
-                      defaultEncoding: &quot;&quot;,
-                      healthy: &quot;&quot;,
-                      pattern: &quot;**/target/checkstyle-result.xml&quot;,
-                      unHealthy: &quot;&quot;])
-            }
-        } else {
-            echo &quot;Skipped&quot;
-        }
-    }
     
-    stage(&apos;Build OVF&apos;) {
-        if(skip_ovf_build == &quot;true&quot;){
-            echo &apos;Skipped&apos;
-        } else {
-            dir (&apos;osc-core&apos;) {
-                sh &apos;ant ovf -Dall=&apos;+all
-            }
-        }
-    }
     
     stage(&apos;Publish&apos;) {
         dir (&apos;osc-core&apos;) {
@@ -248,56 +200,7 @@ node(&apos;master&apos;) {
         }
     }
  
-	stage(&apos;Fetch OVF from Jenkins&apos;) {
-	    if(skip_ovf_build == &quot;true&quot; || deploy == &quot;nodeploy&quot;) {
-            echo &quot;Skipped&quot;
-        } else {
-    		sh &apos;mkdir -p ovf&apos;
-    		dir(&apos;ovf&apos;){
-    			sh &apos;wget http://10.3.240.52/osc-ovf-parametrized/&apos;+buildVersion+&apos;/OSC_disk-0.vmdk --no-proxy&apos;
-    			sh &apos;wget http://10.3.240.52/osc-ovf-parametrized/&apos;+buildVersion+&apos;/OSC-&apos; + buildVersion[5..-1]+ &apos;.ovf --no-proxy&apos;
-    		}
-        }
-	}
-	
-	stage(&apos;Deploy OVF&apos;) {
-        if(deploy == &quot;nodeploy&quot;) {
-            echo &quot;Skipped deployment&quot;
-        } else {
-            echo &quot;Deploy on ${deploy}&quot;
-
-            // vSphere/vCenter settings
-            def VSPHERE_SDK_URL = &apos;https://XX.XX.XXX.XXX/sdk&apos;
-            def VSPHERE_USER = &apos;root&apos;
-            def VSPHERE_PASSWORD = &apos;vmware&apos;
-            
-            // VM deployment settings
-            def ESXI_HOST_IP = &apos;XX.XX.XXX.XXX&apos;
-            def DATASTORE_NAME = &apos;Data&apos;
-            def NETWORK_NAME = &apos;VM Network&apos;
-            
-			def OSC_VM_NAME=&apos;&apos;
-			def OSC_VM_NETMASK=&apos;255.255.254.0&apos;
-			def OSC_VM_GATEWAY=&apos;XX.XX.XXX.X&apos;
-			def OSC_VM_DNS=&apos;10.102.60.20 10.102.60.30&apos;
-
-            switch (deploy) {
-                 case &quot;common&quot;: 
-                    echo &quot;Using universal machine settings&quot;
-                    // OSC VM settings
-                    OSC_VM_NAME=&apos;OSC_common&apos;
-                    OSC_VM_IP=&apos;XX.XX.XXX.XXX&apos;
-                 break
-            }
-            if(skip_ovf_build == &quot;false&quot;){
-                def OVF_LOCAL_PATH = env.WORKSPACE + &apos;/ovf/OSC-&apos; + buildVersion[5..-1]+ &apos;.ovf&apos;
-
-                sh &apos;java -jar /home/jenkins/repos/osc-tools/deploy-ovf/target/deploy-ovf.jar &apos;+VSPHERE_SDK_URL+&apos; &apos;+VSPHERE_USER+&apos; &apos;+VSPHERE_PASSWORD+&apos; &apos;+ESXI_HOST_IP+&apos; &apos;+ OVF_LOCAL_PATH +&apos; &apos;+OSC_VM_NAME+&apos; &apos;+DATASTORE_NAME+&apos; &quot;&apos;+NETWORK_NAME+&apos;&quot; &apos;+OSC_VM_IP+&apos; &apos;+OSC_VM_NETMASK+&apos; &apos;+OSC_VM_GATEWAY+&apos; &quot;&apos;+OSC_VM_DNS+&apos;&quot;&apos; 
-				sh &apos;rm ovf -rf&apos;
-            }
-            
-        }
-    }   
+   
 	
 	stage(&apos;Health check&apos;) {
 		if(deploy == &quot;nodeploy&quot;) {
