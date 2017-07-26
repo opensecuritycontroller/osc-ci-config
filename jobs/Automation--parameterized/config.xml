@@ -82,6 +82,8 @@ then
     how=&apos;-A&apos;
 fi
 
+echo how = $how
+
 pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} -v ip-mc:${McIP} ${how} ${RobotSuite}</command>
     </hudson.tasks.Shell>
   </builders>
@@ -130,7 +132,7 @@ pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} -v ip-
       <runAfterResultFinalised>true</runAfterResultFinalised>
     </com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier>
     <hudson.tasks.Mailer plugin="mailer@1.20">
-      <recipients>dmitry.mx.gerenrot@intel.com</recipients>
+      <recipients>yaro.choma@intel.com</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>true</sendToIndividuals>
     </hudson.tasks.Mailer>
