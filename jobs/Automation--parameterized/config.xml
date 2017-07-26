@@ -76,7 +76,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>if [ &quot;${RobotSuite}&quot; == &quot;Multiple-Suites.robot&quot; ]
+      <command>if [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
 then
 	echo Yaron
     how=&apos;-A&apos;
