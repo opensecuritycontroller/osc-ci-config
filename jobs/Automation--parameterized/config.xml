@@ -78,11 +78,9 @@
     <hudson.tasks.Shell>
       <command>if [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
 then
-	echo Yaron
     how=&apos;-A&apos;
 fi
 
-echo how = $how
 
 pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} -v ip-mc:${McIP} ${how} ${RobotSuite}</command>
     </hudson.tasks.Shell>
