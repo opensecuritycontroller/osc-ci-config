@@ -93,7 +93,7 @@ pybot -d results -v testbed:104.robot -v ip-osc:10.3.136.81 -v ip-vc:10.3.240.17
       <runAfterResultFinalised>true</runAfterResultFinalised>
     </com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier>
     <hudson.tasks.Mailer plugin="mailer@1.20">
-      <recipients>lakshminarayana.kodali@intel.com</recipients>
+      <recipients>dmitry.mx.dgerenrx@intel.com</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
