@@ -367,6 +367,7 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>Automation--parameterized</string>
+        <string>Automation-Parameterized-Config</string>
         <string>Automation-Parameterized-ISM</string>
         <string>osc-image-format</string>
         <string>osc-ovf-parametrized</string>
