@@ -19,11 +19,51 @@
           <description>IP address of OSC to be used for running automation</description>
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
-          <name>VcIP</name>
-          <description>IP address of Virtualization Connector to be used for running automation</description>
-          <defaultValue></defaultValue>
-        </hudson.model.StringParameterDefinition>
+        <hudson.model.TextParameterDefinition>
+          <name>Configuration</name>
+          <description></description>
+          <defaultValue>*** Variables ***
+# OSC
+${osc-ip}=  x.x.x.x
+${osc-user}=  admin
+${osc-pass}=  admin123
+${args}=  -d    2    -v
+
+${none}=
+
+
+# VC
+${vc-type}=  OPENSTACK
+${vc-name}=  default-VC
+${vc-providerIP}=  x.x.x.x
+${vc-providerUser}=  admin
+${vc-providerPass}=  admin123
+${vc-softwareVersion}=  Icehouse
+${vc-ishttps}=  false
+${vc-rabbitMQPort}=  5672
+${vc-rabbitUser}=  guest
+${vc-rabbitMQPassword}=  guest
+${vc-adminProjectName}=  admin
+${vc-adminDomainId}=  default
+#${vc-controllerType}=  NSC
+${vc-controllerType}=  NONE
+${verbose}=  true
+${delay}=  1
+${blank}=
+
+
+# MC
+${mc-type}=  ISM
+${mc-name}=  default-MC
+${mc-providerIP}=  x.x.x.x
+${mc-user}=  admin
+${mc-pass}=  admin123
+${mc-apikey}=
+
+${nsm-cer-name}=  nsmCer
+${nsm-cer-body}=  -----BEGIN CERTIFICATE-----\n xxxxxxxxxxxxxxx \n-----END CERTIFICATE-----
+</defaultValue>
+        </hudson.model.TextParameterDefinition>
         <hudson.model.ChoiceParameterDefinition>
           <name>RobotSuite</name>
           <description></description>
