@@ -89,6 +89,7 @@ fi
 if [ &quot;${OscIP}&quot; = &quot;&quot; ] || [ &quot;${VcIP}&quot; = &quot;&quot; ]
 then
 	echo not running automation
+    exit 1
 else    
 	pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} ${how} ${RobotSuite}
 fi</command>
