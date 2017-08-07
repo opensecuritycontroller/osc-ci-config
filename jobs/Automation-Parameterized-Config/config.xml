@@ -125,9 +125,9 @@ fi
 
 if [ &quot;${OscIP}&quot; = &quot;&quot; ]
 then
-	pybot -d results -v testbed:$file ${how} ${RobotSuite}
+	pybot -d results -v:ParamCfg:true -v testbed:$file ${how} ${RobotSuite}
 else
-	pybot -d results -v testbed:$file -v ip-osc:${OscIP} ${how} ${RobotSuite}
+	pybot -d results -v:ParamCfg:true -v testbed:$file -v ip-osc:${OscIP} ${how} ${RobotSuite}
 fi
 </command>
     </hudson.tasks.Shell>
