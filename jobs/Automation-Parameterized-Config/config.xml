@@ -115,7 +115,7 @@ ${nsm-cer-body}=  -----BEGIN CERTIFICATE-----\n xxxxxxxxxxxxxxx \n-----END CERTI
 now=`echo &quot;$now&quot; | sed -r &apos;s/[:]+/_/g&apos;`
 file=&quot;$now.robot&quot;
 
-echo ${Config} &gt; $file
+echo &quot;${Config}&quot; &gt; $file
 
 
 if [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
