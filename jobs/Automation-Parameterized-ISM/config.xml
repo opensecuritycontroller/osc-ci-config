@@ -77,10 +77,12 @@ then
 fi
 
 if [ &quot;${OscIP}&quot; = &quot;&quot; ]
+then
 	echo OscIP is empty
 fi
 
 if [ &quot;${VcIP}&quot; = &quot;&quot; ]
+then
 	echo VcIP is empty
 fi
 
