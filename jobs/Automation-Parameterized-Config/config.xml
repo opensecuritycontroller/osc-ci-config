@@ -31,7 +31,6 @@ ${args}=  -d    2    -v
 
 ${none}=
 
-
 # VC
 ${vc-type}=  OPENSTACK
 ${vc-name}=  default-VC
@@ -60,8 +59,67 @@ ${mc-user}=  admin
 ${mc-pass}=  admin123
 ${mc-apikey}=
 
-${nsm-cer-name}=  nsmCer
+${nsm-cer-name}=  notUse
 ${nsm-cer-body}=  -----BEGIN CERTIFICATE-----\n xxxxxxxxxxxxxxx \n-----END CERTIFICATE-----
+
+
+*** ignore ***
+# DA (daname, mcname, model, swname, domainName, encapType, vcname, vctype)
+${da-name}=  DAdefault
+${da-mcname}=  default-MC
+${da-model}=  IPS-VM100-VSS
+${da-swname}=  8.3.100.19
+${da-domainName}=  /My Company
+${da-encapType}=  VLAN
+${da-vcname}=  default-VC
+${da-vctype}=  OPENSTACK
+#${vnf-path}=  ../osc_resources/sensorsw_vm100-vss_8310019.zip
+#${vnf-path}=  ../osc_resources/snort-appliance.zip
+${vnf-path}=  ../osc_resources/cirrosAppl-1nic.zip
+
+# DS
+${ds-name}=  DS104
+${ds-daname}=  DA104
+${ds-project}=  demo
+${ds-region}=   regionOne
+${ds-selction}=  All
+${ds-mgmt-net}=  demo-net
+${ds-insp-net}=  insp-net
+${ds-floating-ip-pool}=  ext-net
+${ds-count}=  1
+${ds-shared}=  ${true}
+
+# SG
+${sg-name}=  default-SG-123
+${sg-protect-all}=  false
+${sg-vm-member-name}=  cirros1
+${sg-vm-member-type}=  VM
+${sg-network-member-name}=  demo-net
+${sg-network-member-type}=  NETWORK
+${sg-subnet-member-name}=  demo-subnet
+${sg-subnet-member-type}=  SUBNET
+${sg-binding-da-name}=  ${da-name}
+${sg-binding-is-binded}=  ${true}
+##${sg-binding-name}=  ${sg-name} Test Binding
+${sg-binding-name}=  default-SG-123-BDG-1
+${sg-client-policy-name}=  default  Client  Protection
+${sg-server-policy-name}=  default  Server  Protection
+${sg-client-and-server-policy-name}=  default  Client  and  Server  Protection
+${sg-chaining-fail-open-policy}=  FAIL_OPEN
+${sg-chaining-fail-closed-policy}=  FAIL_CLOSED
+${sg-failopen-bdg-name}=   SG FAIL_OPEN Binding
+${sg-failclosed-bdg-name}=   SG FAIL_CLOSED Binding
+
+${sg-protectall-name}=  SG_protects_all
+${sg-not-protectall-name}=  SG_not_protect_all
+
+#  Openstack-API Related SG Tests
+${sg-mgmt-net}=  ${sg-network-member-name}
+${sg-test-net}=  testnet-1
+${sg-test-port}=  testport-1
+${sg-test-vm}=   testvm-1
+${ostack-ip}=  ${vc-providerIP}
+
 </defaultValue>
         </hudson.model.TextParameterDefinition>
         <hudson.model.ChoiceParameterDefinition>
