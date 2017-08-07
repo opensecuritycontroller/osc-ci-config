@@ -86,7 +86,12 @@ then
 	echo VcIP is empty
 fi
 
-pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} ${how} ${RobotSuite}</command>
+if [ &quot;${OscIP}&quot; = &quot;&quot; ] || [ &quot;${VcIP}&quot; = &quot;&quot; ]
+then
+	echo not running automation
+else    
+	pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} ${how} ${RobotSuite}
+fi</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
