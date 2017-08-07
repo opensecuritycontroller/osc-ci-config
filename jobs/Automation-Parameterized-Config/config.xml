@@ -20,7 +20,7 @@
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
         <hudson.model.TextParameterDefinition>
-          <name>Configuration</name>
+          <name>Config</name>
           <description></description>
           <defaultValue>*** Variables ***
 # OSC
@@ -112,8 +112,10 @@ ${nsm-cer-body}=  -----BEGIN CERTIFICATE-----\n xxxxxxxxxxxxxxx \n-----END CERTI
   <builders>
     <hudson.tasks.Shell>
       <command>now=$(date +&quot;%T&quot;)
+now=`echo &quot;$now&quot; | sed -r &apos;s/[:]+/_/g&apos;`
 file=&quot;$now.robot&quot;
-echo ${Configuration} &gt; $file
+
+echo ${Config} &gt; $file
 
 
 if [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
