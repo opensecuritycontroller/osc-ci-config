@@ -76,6 +76,13 @@ then
     how=&apos;-A&apos;
 fi
 
+if [ &quot;${OscIP}&quot; = &quot;&quot; ]
+	echo OscIP is empty
+fi
+
+if [ &quot;${VcIP}&quot; = &quot;&quot; ]
+	echo VcIP is empty
+fi
 
 pybot -d results -v testbed:104.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} ${how} ${RobotSuite}</command>
     </hudson.tasks.Shell>
