@@ -123,8 +123,12 @@ then
     how=&apos;-A&apos;
 fi
 
-
-pybot -d results -v testbed:$file -v ip-osc:${OscIP} -v ip-vc:${VcIP} ${how} ${RobotSuite}</command>
+if [ &quot;${OscIP}&quot; = &quot;&quot; ]
+	pybot -d results -v testbed:$file ${how} ${RobotSuite}
+else
+	pybot -d results -v testbed:$file -v ip-osc:${OscIP} ${how} ${RobotSuite}
+fi
+</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
