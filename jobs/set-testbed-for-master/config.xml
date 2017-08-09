@@ -14,7 +14,7 @@ Deploy the new OSC from master build</description>
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
   </properties>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.6">
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.8">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
         <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/lib</remote>
@@ -42,7 +42,7 @@ Deploy the new OSC from master build</description>
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>osc-image-format, </upstreamProjects>
+      <upstreamProjects>osc-image-format,</upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
