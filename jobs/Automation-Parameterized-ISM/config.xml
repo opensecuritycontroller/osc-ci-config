@@ -45,7 +45,7 @@
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.8">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/lib</remote>
+        <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation</remote>
         <credentialsId>308bda83-1db3-4e11-8969-2f38a0f72fb9</credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
@@ -85,6 +85,8 @@ if [ &quot;${VcIP}&quot; = &quot;&quot; ]
 then
 	echo VcIP is empty
 fi
+
+cd lib
 
 if [ &quot;${OscIP}&quot; = &quot;&quot; ] || [ &quot;${VcIP}&quot; = &quot;&quot; ]
 then
