@@ -16,7 +16,7 @@
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.8">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/lib</remote>
+        <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation</remote>
         <credentialsId>308bda83-1db3-4e11-8969-2f38a0f72fb9</credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
@@ -53,7 +53,8 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>pybot -d results -v testbed:104.robot -A Multiple-Suites.robot
+      <command>cd lib
+pybot -d results -v testbed:104.robot -A Multiple-Suites.robot
 #pybot -d results -v testbed:104.robot VC.robot</command>
     </hudson.tasks.Shell>
   </builders>
@@ -65,6 +66,7 @@
           <reportDir>results/</reportDir>
           <reportFiles>Report.html</reportFiles>
           <alwaysLinkToLastBuild>true</alwaysLinkToLastBuild>
+          <reportTitles></reportTitles>
           <keepAll>true</keepAll>
           <allowMissing>false</allowMissing>
         </htmlpublisher.HtmlPublisherTarget>
@@ -73,6 +75,7 @@
           <reportDir>results/</reportDir>
           <reportFiles>index.html</reportFiles>
           <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
+          <reportTitles></reportTitles>
           <keepAll>false</keepAll>
           <allowMissing>false</allowMissing>
         </htmlpublisher.HtmlPublisherTarget>
