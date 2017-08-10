@@ -68,15 +68,6 @@
             }
         }
     	
-    	sh &apos;mkdir -p security-mgr-smc-plugin&apos;
-        dir (&apos;security-mgr-smc-plugin&apos;) {
-    		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
-    		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-smc-plugin.git&apos;
-            }
-        }
-    	
     	sh &apos;mkdir -p security-mgr-sample-plugin&apos;
         dir (&apos;security-mgr-sample-plugin&apos;) {
     		try {
@@ -84,16 +75,7 @@
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
             }
-        }
-    	
-    	sh &apos;mkdir -p security-mgr-nsm-plugin&apos;
-        dir (&apos;security-mgr-nsm-plugin&apos;) {
-    		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
-    		} catch (err) {
-                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-nsm-plugin.git&apos;
-            }
-        }
+        }    	    
     	
     	sh &apos;mkdir -p security-mgr-api&apos;
         dir (&apos;security-mgr-api&apos;) {
@@ -119,6 +101,15 @@
     			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
+            }
+        }
+		
+		sh &apos;mkdir -p osc-nuage-plugin&apos;
+        dir (&apos;osc-nuage-plugin&apos;) {
+    		try {
+    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-nuage-plugin.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-nuage-plugin.git&apos;
             }
         }
     }
