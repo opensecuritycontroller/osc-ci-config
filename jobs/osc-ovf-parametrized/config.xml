@@ -25,8 +25,8 @@
           <description>Deployment configuration</description>
           <choices class="java.util.Arrays$ArrayList">
             <a class="string-array">
-              <string>common</string>
               <string>nodeploy</string>
+              <string>common</string>
             </a>
           </choices>
         </hudson.model.ChoiceParameterDefinition>
