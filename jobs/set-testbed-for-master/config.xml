@@ -84,6 +84,8 @@ HOST=10.3.204.107
 
 java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME $DATASTORE_NAME $NETWORK_NAME $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS  
 
+# ending build here till we will know how to deploy to Ocata
+
 VSPHERE_SDK_URL=https://10.3.204.201/sdk
 VSPHERE_IP=10.3.204.201:9443
 VSPHERE_USER=&apos;Administrator@vsphere.local&apos;
@@ -102,9 +104,9 @@ OSC_VM_GATEWAY=10.3.207.251
 OSC_VM_DNS=10.3.86.116
 OSC_VM_IP=10.3.205.110
 DATA_CENTER=SC12
-HOST=10.3.204.107
+HOST=10.3.206.3
 
-java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME $DATASTORE_NAME &apos;$NETWORK_NAME&apos; $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_
+java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME $DATASTORE_NAME &quot;$NETWORK_NAME&quot; $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_
                          
 sleep 200
 
