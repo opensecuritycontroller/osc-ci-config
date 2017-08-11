@@ -84,11 +84,27 @@ HOST=10.3.204.107
 
 java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME $DATASTORE_NAME $NETWORK_NAME $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS  
 
-#ovftool --powerOn --noSSLVerify --hideEula --acceptAllEulas --powerOffTarget --overwrite \
-#        -ds=$DATASTORE_NAME -n=$OSC_VM_NAME --network=$NETWORK_NAME --prop:sbm_ip_0=$OSC_VM_IP \
-#        --prop:sbm_netmask_0=$OSC_VM_NETMASK --prop:sbm_dns1_0=$OSC_VM_DNS --prop:sbm_ntp_0=$OSC_VM_DNS \
-#        --prop:sbm_gateway_0=$OSC_VM_GATEWAY --diskMode=thin --prop:sbm_isSSHEnabled=true \
-#        $OVF_PATH vi://$VSPHERE_USER:$VSPHERE_PASSWORD@$VSPHERE_IP/$DATA_CENTER/host/$HOST
+VSPHERE_SDK_URL=https://10.3.204.201/sdk
+VSPHERE_IP=10.3.204.201:9443
+VSPHERE_USER=&apos;Administrator@vsphere.local&apos;
+VSPHERE_PASSWORD=&apos;Admin!23&apos;
+ESXI_HOST_IP=10.3.206.3
+DATASTORE_NAME=lun02
+NETWORK_NAME=Network-320
+echo -outputDir-buildVersion $outputDir$buildVersion
+OVF_NAME=`ls $outputDir$buildVersion | grep ovf | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;`
+OVF_PATH=$outputDir$buildVersion/$OVF_NAME
+echo $OVF_PATH
+#OSC_VM_NAME=`echo $OVF_NAME | cut -f 1 -d &apos;.&apos;`
+OSC_VM_NAME=CI_OSC
+OSC_VM_NETMASK=255.255.252.0
+OSC_VM_GATEWAY=10.3.207.251
+OSC_VM_DNS=10.3.86.116
+OSC_VM_IP=10.3.205.110:8000
+DATA_CENTER=SC12
+HOST=10.3.204.107
+
+java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME $DATASTORE_NAME $NETWORK_NAME $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_
                          
 sleep 200
 
