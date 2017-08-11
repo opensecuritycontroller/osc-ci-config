@@ -54,8 +54,8 @@
   <builders>
     <hudson.tasks.Shell>
       <command>cd lib
-pybot -d results -v testbed:104.robot -A Multiple-Suites.robot
-#pybot -d results -v testbed:104.robot VC.robot</command>
+pybot -d ../results -v testbed:104.robot -A Multiple-Suites.robot
+</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
