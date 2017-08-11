@@ -54,7 +54,11 @@
   <builders>
     <hudson.tasks.Shell>
       <command>cd lib
+echo running automation on Newton
 pybot -d ../results -v testbed:104.robot -A Multiple-Suites.robot
+
+echo running automation on Ocata
+pybot -d ../results -v testbed:Ocata.robot -A Multiple-Suites.robot
 </command>
     </hudson.tasks.Shell>
   </builders>
