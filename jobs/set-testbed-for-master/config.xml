@@ -17,7 +17,7 @@ Deploy the new OSC from master build</description>
   <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.8">
     <locations>
       <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/lib</remote>
+        <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation</remote>
         <credentialsId>308bda83-1db3-4e11-8969-2f38a0f72fb9</credentialsId>
         <local>.</local>
         <depthOption>infinity</depthOption>
