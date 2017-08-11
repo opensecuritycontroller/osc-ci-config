@@ -93,7 +93,7 @@ then
 	echo not running automation
     exit 1
 else    
-	pybot -d results -v testbed:Testbed.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} ${how} ${RobotSuite}
+	pybot -d ../results -v testbed:Testbed.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} ${how} ${RobotSuite}
 fi</command>
     </hudson.tasks.Shell>
   </builders>
