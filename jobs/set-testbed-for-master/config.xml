@@ -42,7 +42,7 @@ Deploy the new OSC from master build</description>
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>osc-image-format,</upstreamProjects>
+      <upstreamProjects>osc-image-format</upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>

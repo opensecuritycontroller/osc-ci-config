@@ -41,7 +41,7 @@
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>set_testbed_for_robot_tests,</upstreamProjects>
+      <upstreamProjects>set_testbed_for_robot_tests</upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
