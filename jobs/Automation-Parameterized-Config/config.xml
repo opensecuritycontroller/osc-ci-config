@@ -164,7 +164,9 @@ ${ostack-ip}=  ${vc-providerIP}</defaultValue>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>now=$(date +&quot;%T&quot;)
+      <command>cd lib
+
+now=$(date +&quot;%T&quot;)
 now=`echo &quot;$now&quot; | sed -r &apos;s/[:]+/_/g&apos;`
 file=&quot;$now.robot&quot;
 
@@ -176,7 +178,7 @@ then
     how=&apos;-A&apos;
 fi
 
-cd lib
+
 
 if [ &quot;${OscIP}&quot; = &quot;&quot; ]
 then
