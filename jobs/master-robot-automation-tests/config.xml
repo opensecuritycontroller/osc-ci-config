@@ -53,7 +53,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd lib
+      <command>cd robot
 
 echo running automation on Ocata
 pybot -d ../results -v testbed:Ocata.robot -A Multiple-Suites.robot
