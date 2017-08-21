@@ -71,7 +71,9 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>if [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
+      <command>cd robot
+
+if [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
 then
     how=&apos;-A&apos;
 fi
@@ -85,8 +87,6 @@ if [ &quot;${VcIP}&quot; = &quot;&quot; ]
 then
 	echo VcIP is empty
 fi
-
-cd lib
 
 if [ &quot;${OscIP}&quot; = &quot;&quot; ] || [ &quot;${VcIP}&quot; = &quot;&quot; ]
 then
