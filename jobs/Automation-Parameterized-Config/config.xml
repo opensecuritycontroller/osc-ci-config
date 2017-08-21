@@ -164,7 +164,7 @@ ${ostack-ip}=  ${vc-providerIP}</defaultValue>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd robot
+      <command>cd testbeds
 
 now=$(date +&quot;%T&quot;)
 now=`echo &quot;$now&quot; | sed -r &apos;s/[:]+/_/g&apos;`
@@ -172,6 +172,7 @@ file=&quot;$now.robot&quot;
 
 echo &quot;${Config}&quot; &gt; $file
 
+cd ../robot
 
 if [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
 then
