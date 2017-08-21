@@ -164,7 +164,7 @@ ${ostack-ip}=  ${vc-providerIP}</defaultValue>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd lib
+      <command>cd robot
 
 now=$(date +&quot;%T&quot;)
 now=`echo &quot;$now&quot; | sed -r &apos;s/[:]+/_/g&apos;`
@@ -194,7 +194,7 @@ fi
       <reportTargets>
         <htmlpublisher.HtmlPublisherTarget>
           <reportName>Automation Report</reportName>
-          <reportDir>results/</reportDir>
+          <reportDir>../results/</reportDir>
           <reportFiles>Report.html</reportFiles>
           <alwaysLinkToLastBuild>true</alwaysLinkToLastBuild>
           <reportTitles></reportTitles>
@@ -203,7 +203,7 @@ fi
         </htmlpublisher.HtmlPublisherTarget>
         <htmlpublisher.HtmlPublisherTarget>
           <reportName>HTML Report</reportName>
-          <reportDir>results/</reportDir>
+          <reportDir>../results/</reportDir>
           <reportFiles>index.html</reportFiles>
           <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
           <reportTitles></reportTitles>
@@ -227,7 +227,7 @@ fi
       <onlyCritical>true</onlyCritical>
     </hudson.plugins.robot.RobotPublisher>
     <com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier plugin="copy-to-slave@1.4.4">
-      <includes>results/*</includes>
+      <includes>../results/*</includes>
       <excludes></excludes>
       <overrideDestinationFolder>false</overrideDestinationFolder>
       <destinationFolder></destinationFolder>
