@@ -56,7 +56,7 @@
       <command>cd robot
 
 echo running automation on Ocata
-pybot -d ../results -v testbed:Ocata.robot -A Multiple-Suites.robot
+pybot -d ../results -v testbed:Ocata-3.robot -A Multiple-Suites.robot
 
 echo running automation on Newton
 pybot -d ../results -v testbed:104.robot -A Multiple-Suites.robot</command>
