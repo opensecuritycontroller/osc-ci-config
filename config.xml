@@ -417,12 +417,14 @@
     </listView>
     <listView>
       <owner class="hudson" reference="../../.."/>
-      <name>automation</name>
+      <name>automation-old</name>
       <filterExecutors>false</filterExecutors>
       <filterQueue>false</filterQueue>
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>robot_automated_tests</string>
+        <string>set_testbed_for_robot_tests</string>
       </jobNames>
       <jobFilters/>
       <columns>
