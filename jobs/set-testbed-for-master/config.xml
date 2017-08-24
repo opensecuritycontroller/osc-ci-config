@@ -92,8 +92,8 @@ VSPHERE_IP=10.3.240.201:9443
 VSPHERE_USER=&apos;Administrator@vsphere.local&apos;
 VSPHERE_PASSWORD=&apos;Admin!23&apos;
 ESXI_HOST_IP=10.3.242.124
-DATASTORE_NAME=&apos;ds01 (2)&apos;
-NETWORK_NAME=&apos;VM Network&apos;
+DATASTORE_NAME=ds01 (2)
+NETWORK_NAME=VM Network
 echo -outputDir-buildVersion $outputDir$buildVersion
 OVF_NAME=`ls $outputDir$buildVersion | grep ovf | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;`
 OVF_PATH=$outputDir$buildVersion/$OVF_NAME
@@ -104,10 +104,10 @@ OSC_VM_NETMASK=255.255.252.0
 OSC_VM_GATEWAY=10.3.243.251
 OSC_VM_DNS=10.3.86.116
 OSC_VM_IP=10.3.241.211
-DATA_CENTER=&apos;Physical Datacenter&apos;
+DATA_CENTER=Physical Datacenter
 HOST=10.3.242.124
 
-java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME &quot;&apos;&quot;$DATASTORE_NAME&quot;&apos;&quot; &quot;&apos;&quot;$NETWORK_NAME&quot;&apos;&quot; $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS
+java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME &quot;$DATASTORE_NAME&quot; &quot;$NETWORK_NAME&quot; $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS
                          
 sleep 200
 
