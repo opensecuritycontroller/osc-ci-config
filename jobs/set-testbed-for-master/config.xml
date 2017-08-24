@@ -92,7 +92,7 @@ VSPHERE_IP=10.3.240.201:9443
 VSPHERE_USER=&apos;Administrator@vsphere.local&apos;
 VSPHERE_PASSWORD=&apos;Admin!23&apos;
 ESXI_HOST_IP=10.3.242.124
-DATASTORE_NAME=&apos;ds01 (2)&apos;
+DATASTORE_NAME=&apos;datatstore1&apos;
 NETWORK_NAME=&apos;VM Network&apos;
 echo -outputDir-buildVersion $outputDir$buildVersion
 OVF_NAME=`ls $outputDir$buildVersion | grep ovf | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;`
