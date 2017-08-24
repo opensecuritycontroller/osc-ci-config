@@ -99,7 +99,7 @@ OVF_NAME=`ls $outputDir$buildVersion | grep ovf | tr -d &apos;\r&apos; | tr -d &
 OVF_PATH=$outputDir$buildVersion/$OVF_NAME
 echo $OVF_PATH
 #OSC_VM_NAME=`echo $OVF_NAME | cut -f 1 -d &apos;.&apos;`
-OSC_VM_NAME=CI_OSC
+OSC_VM_NAME=CI_OSC-241-211
 OSC_VM_NETMASK=255.255.252.0
 OSC_VM_GATEWAY=10.3.243.251
 OSC_VM_DNS=10.3.86.116
