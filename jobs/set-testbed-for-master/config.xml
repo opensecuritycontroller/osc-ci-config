@@ -67,8 +67,8 @@ DATASTORE_NAME=lun02
 NETWORK_NAME=Network-320
 echo -outputDir-buildVersion $outputDir$buildVersion
 OVF_NAME=`ls $outputDir$buildVersion | grep ovf | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;`
-OVF_PATH=$outputDir$buildVersion/$OVF_NAME
-OVF_PATH= /var/www/vsc-builds/master-all/Build1.0.0-SNAPSHOT-58-g6fa6d4d - VISA IP-Mac/OSC-1.0.0-SNAPSHOT-58-g6fa6d4d.ovf
+#OVF_PATH=$outputDir$buildVersion/$OVF_NAME
+#OVF_PATH= /var/www/vsc-builds/master-all/Build1.0.0-SNAPSHOT-58-g6fa6d4d - VISA IP-Mac/OSC-1.0.0-SNAPSHOT-58-g6fa6d4d.ovf
 OVF_PATH= /var/www/vsc-builds/master-all/Build1.0.0-SNAPSHOT-57-gff26ed1/OSC-1.0.0-SNAPSHOT-57-gff26ed1.ovf
 echo $OVF_PATH
 #OSC_VM_NAME=`echo $OVF_NAME | cut -f 1 -d &apos;.&apos;`
