@@ -68,7 +68,7 @@ NETWORK_NAME=Network-320
 echo -outputDir-buildVersion $outputDir$buildVersion
 OVF_NAME=`ls $outputDir$buildVersion | grep ovf | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;`
 OVF_PATH=$outputDir$buildVersion/$OVF_NAME
-OVF_PATH= /var/www/vsc-builds/master-all/Build1.0.0-SNAPSHOT-58-g6fa6d4d - VISA IP-Mac/OSC-1.0.0-SNAPSHOT-58-g6fa6
+OVF_PATH= /var/www/vsc-builds/master-all/Build1.0.0-SNAPSHOT-58-g6fa6d4d - VISA IP-Mac/OSC-1.0.0-SNAPSHOT-58-g6fa6d4d.ovf
 echo $OVF_PATH
 #OSC_VM_NAME=`echo $OVF_NAME | cut -f 1 -d &apos;.&apos;`
 OSC_VM_NAME=CI_OSC
