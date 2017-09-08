@@ -68,6 +68,7 @@ NETWORK_NAME=Network-320
 echo -outputDir-buildVersion $outputDir$buildVersion
 OVF_NAME=`ls $outputDir$buildVersion | grep ovf | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;`
 OVF_PATH=$outputDir$buildVersion/$OVF_NAME
+OVF_PATH= /var/www/vsc-builds/master-all/Build1.0.0-SNAPSHOT-58-g6fa6d4d - VISA IP-Mac/OSC-1.0.0-SNAPSHOT-58-g6fa6
 echo $OVF_PATH
 #OSC_VM_NAME=`echo $OVF_NAME | cut -f 1 -d &apos;.&apos;`
 OSC_VM_NAME=CI_OSC
@@ -82,6 +83,7 @@ HOST=10.3.204.107
 #working one
 #java -jar /var/tmp/deploy-ovf.jar &apos;https://10.3.204.201/sdk&apos; &apos;Administrator@vsphere.local&apos; &apos;Admin!23&apos; 10.3.204.107 &apos;/var/www/vsc-builds/master/Build163-g068505a/OSC-163-g068505a.ovf&apos; &apos;OSC-163-g068505a&apos; &apos;lun02&apos; &apos;network-320&apos; 10.3.205.104 255.255.252.0 10.3.207.251 10.3.86.116
 
+#java -jar /var/tmp/deploy-ovf.jar https://10.3.204.201/sdk Administrator@vsphere.local Admin!23 10.3.204.107 /var/www/vsc-builds/master-all/Build1.0.0-SNAPSHOT-58-g6fa6d4d/OSC-1.0.0-SNAPSHOT-58-g6fa6d4d.ovf CI_OSC lun02 Network-320 10.3.205.104 255.255.252.0 10.3.207.251 10.3.86.116
 java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME $DATASTORE_NAME $NETWORK_NAME $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS  
 
 
