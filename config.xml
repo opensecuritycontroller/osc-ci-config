@@ -334,14 +334,10 @@
         <string>osc-core</string>
         <string>osc-ovf</string>
         <string>osc-ovf-all</string>
-        <string>osc_ovf_master_bkp</string>
         <string>sdn-controller-api</string>
         <string>sdn-controller-nsc-plugin</string>
         <string>security-mgr-api</string>
-        <string>security-mgr-nsm-plugin</string>
         <string>security-mgr-sample-plugin</string>
-        <string>security-mgr-smc-plugin</string>
-        <string>vmware-nsx-api</string>
       </jobNames>
       <jobFilters/>
       <columns>
