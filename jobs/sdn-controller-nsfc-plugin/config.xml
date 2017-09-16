@@ -44,7 +44,7 @@
   <concurrentBuild>false</concurrentBuild>
   <rootModule>
     <groupId>org.osc.plugin</groupId>
-    <artifactId>sdn-controller-nsc-plugin</artifactId>
+    <artifactId>sdn-controller-nsfc-plugin</artifactId>
   </rootModule>
   <goals>clean install</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
