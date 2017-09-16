@@ -336,6 +336,7 @@
         <string>osc-ovf-all</string>
         <string>sdn-controller-api</string>
         <string>sdn-controller-nsc-plugin</string>
+        <string>sdn-controller-nsfc-plugin</string>
         <string>security-mgr-api</string>
         <string>security-mgr-sample-plugin</string>
       </jobNames>
