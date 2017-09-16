@@ -361,6 +361,8 @@
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>osc-nuage-plugin</string>
         <string>osc-pan-plugin</string>
+        <string>security-mgr-nsm-plugin</string>
+        <string>security-mgr-smc-plugin</string>
       </jobNames>
       <jobFilters/>
       <columns>
