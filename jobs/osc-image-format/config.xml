@@ -112,6 +112,15 @@
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-nuage-plugin.git&apos;
             }
         }
+		
+		sh &apos;mkdir -p sdn-controller-nsfc-plugin&apos;
+        dir (&apos;sdn-controller-nsfc-plugin&apos;) {
+    		try {
+    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsfc-plugin.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsfc-plugin.git&apos;
+            }
+        }
     }
 
     stage(&apos;Build OVF&apos;) {
