@@ -25,10 +25,10 @@
           <description>Image formats which should be generated</description>
           <choices class="java.util.Arrays$ArrayList">
             <a class="string-array">
+              <string>vmdk_only</string>
               <string>qcow2_only</string>
               <string>qcow2_and_vmdk</string>
               <string>raw_only</string>
-              <string>vmdk_only</string>
             </a>
           </choices>
         </hudson.model.ChoiceParameterDefinition>
