@@ -37,7 +37,7 @@
               <string>SG.robot</string>
               <string>SG-Binding.robot</string>
               <string>SFC.robot</string>
-              <string>SG-Binding-SFC</string>
+              <string>SG-Binding-SFC.robot</string>
             </a>
           </choices>
         </hudson.model.ChoiceParameterDefinition>
