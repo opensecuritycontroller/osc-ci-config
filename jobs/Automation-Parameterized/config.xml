@@ -105,9 +105,9 @@ fi
 
 python3 -V
 
-python3 DepChecker.py
+python3 ../testbeds/DepChecker.py
 
-python3 -r -v -o ${OscIP}  -k ${VcIP} -d 2</command>
+python3 ../lib/vcTests.py -r -v -o ${OscIP}  -k ${VcIP} -d 2</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
