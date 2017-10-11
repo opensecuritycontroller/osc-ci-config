@@ -96,7 +96,13 @@ then
     exit 1
 else    
 	pybot -d ../results -v testbed:Testbed.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} ${how} ${RobotSuite}
-fi</command>
+fi
+
+python3 -V
+
+python3 DepChecker.py
+
+python3 -r -v -o ${OscIP}  -k ${VcIP} -d 2</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
