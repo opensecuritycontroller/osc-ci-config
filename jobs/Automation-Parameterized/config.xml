@@ -75,6 +75,8 @@
     <hudson.tasks.Shell>
       <command>cd robot
 
+: &apos;
+
 if [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
 then
     how=&apos;-A&apos;
@@ -97,6 +99,9 @@ then
 else    
 	pybot -d ../results -v testbed:Testbed.robot -v ip-osc:${OscIP} -v ip-vc:${VcIP} ${how} ${RobotSuite}
 fi
+
+&apos;
+
 
 python3 -V
 
