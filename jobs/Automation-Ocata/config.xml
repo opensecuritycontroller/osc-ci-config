@@ -55,8 +55,8 @@
     <hudson.tasks.Shell>
       <command>cd robot
 
-echo running automation on Ocata
-pybot -d ../results -v testbed:Ocata-3.robot -A Multiple-Suites.robot
+echo running sanity no sfc automation on Ocata
+pybot -d ../results -v testbed:Ocata-3.robot SanityNoSFC.robot
 </command>
     </hudson.tasks.Shell>
   </builders>
