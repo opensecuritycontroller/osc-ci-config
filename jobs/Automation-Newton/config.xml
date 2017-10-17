@@ -56,7 +56,7 @@
       <command>cd robot
 
 echo running automation on Newton
-pybot -d ../results -v testbed:104.robot -A Multiple-Suites.robot</command>
+pybot -d ../results -v testbed:104.robot SanityWithSFC.robot</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
