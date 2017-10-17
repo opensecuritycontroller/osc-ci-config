@@ -161,7 +161,7 @@
             echo &apos;Found build: &apos; + buildVersion
             sh &apos;sudo rm &apos; + outputDir + buildVersion + &apos; -rf&apos;
             sh &apos;sudo mv -v &apos;+buildVersion+&apos; &apos; + outputDir
-            echo &quot;http://10.3.240.52/&quot; + &quot;${branch}&quot; + &quot;-all/&quot; + &quot;buildVersion/&quot;
+            echo &quot;http://10.3.240.52/&quot; + &quot;${branch}&quot; + &quot;-all/&quot; + &quot;${buildVersion}/&quot;
        }
     }
     
