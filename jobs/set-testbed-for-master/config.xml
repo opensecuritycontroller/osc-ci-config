@@ -54,6 +54,18 @@ Deploy the new OSC from master build</description>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
+      <command>cd robot
+
+echo cleaning Newton with automation
+pybot -d ../results -v testbed:104.robot Clean.robot</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>cd robot
+
+echo cleaning Ocata with automation
+pybot -d ../results -v testbed:Ocata-3.robotClean.robot</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
       <command>outputDir=/var/www/vsc-builds/master-all/
 echo outputDir $outputDir
 buildVersion=`ls -t $outputDir | awk &apos;NR=1&apos; | head -1`
