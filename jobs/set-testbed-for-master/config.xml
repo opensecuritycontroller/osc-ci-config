@@ -63,7 +63,7 @@ pybot -d ../results -v testbed:104.robot Clean.robot</command>
       <command>cd robot
 
 echo cleaning Ocata with automation
-pybot -d ../results -v testbed:Ocata-3.robotClean.robot</command>
+pybot -d ../results -v testbed:Ocata-3.robot Clean.robot</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>outputDir=/var/www/vsc-builds/master-all/
