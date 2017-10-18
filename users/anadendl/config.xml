@@ -6,7 +6,7 @@
     <jenkins.security.ApiTokenProperty>
       <apiToken>40qSADO4Sgxw1o95Qcka9nypugC2Z2uyBa4LJ7yBGD/U/MDv5CQSRsiZYXL6DzKL</apiToken>
     </jenkins.security.ApiTokenProperty>
-    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.13">
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.14">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash">
         <entry>
           <com.cloudbees.plugins.credentials.domains.Domain>
@@ -19,7 +19,7 @@
     <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.20">
       <emailAddress>arvind.nadendla@intel.com</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
-    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.57.2">
+    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.58">
       <triggers/>
     </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
     <jenkins.security.LastGrantedAuthoritiesProperty>
@@ -41,7 +41,9 @@
       </views>
     </hudson.model.MyViewsProperty>
     <hudson.model.PaneStatusProperties>
-      <collapsed/>
+      <collapsed>
+        <string>buildHistory</string>
+      </collapsed>
     </hudson.model.PaneStatusProperties>
     <hudson.security.HudsonPrivateSecurityRealm_-Details>
       <passwordHash>#jbcrypt:$2a$10$x7/HRvuoD3O6uaODyn1DF.Egpc6EeKg2PKWvUemd6VcHiKSIAB6E6</passwordHash>
