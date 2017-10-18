@@ -8,7 +8,6 @@
   <mode>NORMAL</mode>
   <useSecurity>true</useSecurity>
   <authorizationStrategy class="com.michelin.cio.hudson.plugins.rolestrategy.RoleBasedAuthorizationStrategy">
-    <roleMap type="projectRoles"/>
     <roleMap type="globalRoles">
       <role name="admin" pattern=".*">
         <permissions>
@@ -129,6 +128,7 @@
           <permission>hudson.model.View.Read</permission>
           <permission>hudson.model.View.Create</permission>
           <permission>hudson.model.Item.Cancel</permission>
+          <permission>hudson.model.Item.Delete</permission>
           <permission>hudson.model.Item.Read</permission>
           <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View</permission>
           <permission>hudson.model.Item.Build</permission>
@@ -142,7 +142,6 @@
         </assignedSIDs>
       </role>
     </roleMap>
-    <roleMap type="slaveRoles"/>
   </authorizationStrategy>
   <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
     <disableSignup>false</disableSignup>
