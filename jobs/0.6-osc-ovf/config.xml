@@ -13,7 +13,7 @@
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
   </properties>
-  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.2.0">
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.1">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
@@ -31,7 +31,7 @@
     <extensions/>
   </scm>
   <canRoam>true</canRoam>
-  <disabled>false</disabled>
+  <disabled>true</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <jdk>Java 8</jdk>
@@ -43,7 +43,7 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <hudson.tasks.Ant plugin="ant@1.3">
+    <hudson.tasks.Ant plugin="ant@1.5">
       <targets>ovf</targets>
       <antName>default ant</antName>
     </hudson.tasks.Ant>
@@ -57,7 +57,7 @@
       <dontNotifyEveryUnstableBuild>true</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
-    <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.57.2">
+    <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.58">
       <recipientList>$DEFAULT_RECIPIENTS</recipientList>
       <configuredTriggers>
         <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
@@ -116,7 +116,7 @@
       <saveOutput>false</saveOutput>
       <disabled>false</disabled>
     </hudson.plugins.emailext.ExtendedEmailPublisher>
-    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.33">
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.34">
       <configs>
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
