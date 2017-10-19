@@ -473,6 +473,7 @@
         <string>Automation-Newton</string>
         <string>Automation-Ocata</string>
         <string>Detailed-Automation-Newton</string>
+        <string>Detailed-Automation-Ocata</string>
         <string>set-testbed-for-master</string>
       </jobNames>
       <jobFilters/>
