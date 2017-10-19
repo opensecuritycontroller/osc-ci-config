@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description></description>
+  <description>Run all available tests  (even some that will fail due to unsupported on this environment - but passing with different environments)</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <jenkins.model.BuildDiscarderProperty>
@@ -41,7 +41,7 @@
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>set-testbed-for-master</upstreamProjects>
+      <upstreamProjects>Automation-Newton, </upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
@@ -55,8 +55,8 @@
     <hudson.tasks.Shell>
       <command>cd robot
 
-echo running automation on Newton
-pybot -d ../results -v testbed:104.robot SanityWithSFC.robot</command>
+echo running detailed automation on Newton
+pybot -d ../results -v testbed:104.robot -A Multiple-Suites-Full.robot</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -104,7 +104,7 @@ pybot -d ../results -v testbed:104.robot SanityWithSFC.robot</command>
       <runAfterResultFinalised>true</runAfterResultFinalised>
     </com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier>
     <hudson.tasks.Mailer plugin="mailer@1.20">
-      <recipients>osc-scrum-all@intel.com</recipients>
+      <recipients>yaron.choma@intel.com</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
