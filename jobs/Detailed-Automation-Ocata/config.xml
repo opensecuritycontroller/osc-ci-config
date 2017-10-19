@@ -41,7 +41,7 @@
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>Automation-Newton, </upstreamProjects>
+      <upstreamProjects>Automation-Ocata, </upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
@@ -55,8 +55,8 @@
     <hudson.tasks.Shell>
       <command>cd robot
 
-echo running detailed automation on Newton
-pybot -d ../results -v testbed:104.robot -A Multiple-Suites-Full.robot</command>
+echo running detailed automation on Ocata
+pybot -d ../results -v testbed:Ocata-3.robot -A Multiple-Suites-Full.robot</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
