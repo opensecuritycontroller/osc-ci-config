@@ -22,7 +22,7 @@ PATH+=/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</propert
   <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.36">
     <script>node(&apos;master&apos;) {
     
-    stage(&apos;Preparation&apos;) {
+	stage(&apos;Preparation&apos;) {
         
         sh &apos;git config --global http.proxy http://proxy-us.intel.com:911&apos;
 		sh &apos;git config --global https.proxy http://proxy-us.intel.com:912&apos;
@@ -35,11 +35,6 @@ PATH+=/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</propert
             git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
         }
 		
-		//sh &apos;mkdir -p security-mgr-sample-plugin&apos;
-        dir (&apos;security-mgr-sample-plugin&apos;) {
-            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
-        }
-		
 		//sh &apos;mkdir -p security-mgr-api&apos;
         dir (&apos;security-mgr-api&apos;) {
             git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
@@ -49,6 +44,11 @@ PATH+=/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</propert
         dir (&apos;sdn-controller-api&apos;) {
             git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
         }
+		
+		//sh &apos;mkdir -p security-mgr-sample-plugin&apos;
+        dir (&apos;security-mgr-sample-plugin&apos;) {
+            git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
+        }		
 		
 		//sh &apos;mkdir -p sdn-controller-nsc-plugin&apos;
         dir (&apos;sdn-controller-nsc-plugin&apos;) {
