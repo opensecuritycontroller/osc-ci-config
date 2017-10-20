@@ -41,7 +41,7 @@
     <groupId>org.osc.core</groupId>
     <artifactId>osc-root</artifactId>
   </rootModule>
-  <goals>clean install</goals>
+  <goals>clean install org.jacoco:jacoco-maven-plugin:report</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
   <incrementalBuild>false</incrementalBuild>
   <ignoreUpstremChanges>true</ignoreUpstremChanges>
@@ -167,9 +167,9 @@
       <isAndroidLintDeactivated>false</isAndroidLintDeactivated>
     </hudson.plugins.analysis.collector.AnalysisPublisher>
     <hudson.plugins.jacoco.JacocoPublisher plugin="jacoco@2.2.1">
-      <execPattern>osc-server/target/coverage-reports/**.exec</execPattern>
-      <classPattern>osc-server/target/classes</classPattern>
-      <sourcePattern>osc-server/src/main</sourcePattern>
+      <execPattern>target/**.exec</execPattern>
+      <classPattern>**/target/classes</classPattern>
+      <sourcePattern>**/src/main</sourcePattern>
       <inclusionPattern></inclusionPattern>
       <exclusionPattern>**/org/osc/core/broker/view/**/*,**/org/osc/core/broker/window/**/*</exclusionPattern>
       <skipCopyOfSrcFiles>false</skipCopyOfSrcFiles>
