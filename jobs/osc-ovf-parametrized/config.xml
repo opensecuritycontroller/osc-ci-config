@@ -222,7 +222,7 @@ node(&apos;master&apos;) {
         } else {
             if(enable_junit_tests == &quot;true&quot;) {
                 dir (&apos;osc-core&apos;) {
-                    sh &apos;ant ovfOnly,ovfCopy&apos;
+                    sh &apos;ant ovfOnly ovfCopy&apos;
                 }
             } else {
                 dir (&apos;osc-core&apos;) {
