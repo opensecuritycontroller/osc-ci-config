@@ -337,8 +337,10 @@
         <string>arv-jacoco-test</string>
         <string>master_klocwork_pipe</string>
         <string>osc-core</string>
+        <string>osc-nuage-plugin</string>
         <string>osc-ovf</string>
         <string>osc-ovf-all</string>
+        <string>osc-pan-plugin</string>
         <string>sdn-controller-api</string>
         <string>sdn-controller-nsc-plugin</string>
         <string>sdn-controller-nsfc-plugin</string>
