@@ -424,6 +424,7 @@
         <string>0.6-security-mgr-smc-plugin</string>
         <string>0.6-vmware-nsx-api</string>
         <string>0.6-vmware-nsx-plugin</string>
+        <string>0.8.0-sdn-controller-api</string>
       </jobNames>
       <jobFilters/>
       <columns>
