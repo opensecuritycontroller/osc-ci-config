@@ -168,8 +168,8 @@
     </hudson.plugins.analysis.collector.AnalysisPublisher>
     <hudson.plugins.jacoco.JacocoPublisher plugin="jacoco@2.2.1">
       <execPattern>target/**.exec</execPattern>
-      <classPattern>**/target/classes</classPattern>
-      <sourcePattern>**/src/main</sourcePattern>
+      <classPattern>osc-server/target/classes</classPattern>
+      <sourcePattern>osc-server/src/main</sourcePattern>
       <inclusionPattern></inclusionPattern>
       <exclusionPattern>**/org/osc/core/broker/view/**/*,**/org/osc/core/broker/window/**/*</exclusionPattern>
       <skipCopyOfSrcFiles>false</skipCopyOfSrcFiles>
@@ -198,7 +198,7 @@
       <reportTargets>
         <htmlpublisher.HtmlPublisherTarget>
           <reportName>Jacoco Code coverage</reportName>
-          <reportDir>osc-server/target/site/jacoco-ut/</reportDir>
+          <reportDir>osc-server/target/site/jacoco/</reportDir>
           <reportFiles>index.html</reportFiles>
           <alwaysLinkToLastBuild>true</alwaysLinkToLastBuild>
           <reportTitles></reportTitles>
