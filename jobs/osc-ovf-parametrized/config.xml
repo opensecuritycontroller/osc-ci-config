@@ -200,7 +200,7 @@ node(&apos;master&apos;) {
         if(enable_junit_tests == &quot;true&quot;) {
             try{
                 dir (&apos;osc-core&apos;) {
-                    sh &apos;mvn clean install -Dcheckstyle.skip=true -P all&apos;
+                    sh &apos;mvn clean install -Dcheckstyle.skip=true -Dmaven.test.skip=true -P all&apos;
                 }
             } finally {
                 step([$class: &quot;JUnitResultArchiver&quot;, testResults: &apos;**/target/surefire-reports/TEST-*.xml, **/target/failsafe-reports/TEST-*.xml&apos;])
