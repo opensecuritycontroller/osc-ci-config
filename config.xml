@@ -420,14 +420,12 @@
         <string>0.6-osc-core</string>
         <string>0.6-osc-ovf</string>
         <string>0.6-sdn-controller-nsc-plugin</string>
-        <string>0.6-security-mgr-api</string>
         <string>0.6-security-mgr-nsm-plugin</string>
         <string>0.6-security-mgr-sample-plugin</string>
         <string>0.6-security-mgr-smc-plugin</string>
         <string>0.6-vmware-nsx-api</string>
         <string>0.6-vmware-nsx-plugin</string>
         <string>0.8.0-sdn-controller-api</string>
-        <string>0.8.0-security-mgr-api</string>
       </jobNames>
       <jobFilters/>
       <columns>
@@ -502,7 +500,6 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[11]/jobNames/comparator"/>
         <string>0.8.0-sdn-controller-api</string>
-        <string>0.8.0-security-mgr-api</string>
       </jobNames>
       <jobFilters/>
       <columns>
