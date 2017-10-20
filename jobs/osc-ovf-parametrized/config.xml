@@ -220,8 +220,14 @@ node(&apos;master&apos;) {
         if(skip_ovf_build == &quot;true&quot;){
             echo &apos;Skipped&apos;
         } else {
-            dir (&apos;osc-core&apos;) {
-                sh &apos;ant ovf -Dall=&apos;+all
+            if(enable_junit_tests == &quot;true&quot;) {
+                dir (&apos;osc-core&apos;) {
+                    sh &apos;ant ovfOnly,ovfCopy&apos;
+                }
+            } else {
+                dir (&apos;osc-core&apos;) {
+                    sh &apos;ant ovf -Dall=&apos;+all
+                }
             }
         }
     }
