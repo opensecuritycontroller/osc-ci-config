@@ -31,7 +31,7 @@
           </choices>
         </hudson.model.ChoiceParameterDefinition>
         <hudson.model.BooleanParameterDefinition>
-          <name>enable_junit_tests</name>
+          <name>install</name>
           <description>If true, runs maven build with unit tests</description>
           <defaultValue>true</defaultValue>
         </hudson.model.BooleanParameterDefinition>
@@ -196,10 +196,14 @@ node(&apos;master&apos;) {
         }
     }
     
-    stage(&apos;Run junit tests&apos;) {
-        if(enable_junit_tests == &quot;true&quot;) {
+    stage(&apos;Clean &amp; Install&apos;) {
+        if(install == &quot;true&quot;) {
             dir (&apos;osc-core&apos;) {
-                sh &apos;mvn clean install -Dcheckstyle.skip=true -Dmaven.test.skip=true -P all&apos;
+                if(all == true) {
+                    sh &apos;mvn clean install -Dcheckstyle.skip=true -Pall&apos;
+                } else {
+                    sh &apos;mvn clean install&apos;
+                }
             }
         } else {
             echo &quot;Skipped&quot;
@@ -210,7 +214,7 @@ node(&apos;master&apos;) {
         if(skip_ovf_build == &quot;true&quot;){
             echo &apos;Skipped&apos;
         } else {
-            if(enable_junit_tests == &quot;true&quot;) {
+            if(install == &quot;true&quot;) {
                 dir (&apos;osc-core&apos;) {
                     sh &apos;ant ovfOnly ovfCopy&apos;
                 }
