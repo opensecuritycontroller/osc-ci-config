@@ -17,13 +17,13 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/opensecuritycontroller/osc-core.git</url>
+        <url>https://github.com/arvindn05/osc-core.git</url>
         <credentialsId>oscservice-token</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>origin/master</name>
+        <name>origin/sonar</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -213,7 +213,7 @@
       </reportTargets>
     </htmlpublisher.HtmlPublisher>
     <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.58">
-      <recipientList>arvind.nadendla@intel.com;emanoel.xavier@intel.com</recipientList>
+      <recipientList>arvind.nadendla@intel.com</recipientList>
       <configuredTriggers>
         <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
           <email>
