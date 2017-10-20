@@ -334,7 +334,6 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
-        <string>arv-jacoco-test</string>
         <string>master_klocwork_pipe</string>
         <string>osc-core</string>
         <string>osc-nuage-plugin</string>
