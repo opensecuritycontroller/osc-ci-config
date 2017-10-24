@@ -54,10 +54,10 @@ Deploy the new OSC from master build</description>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd robot
+      <command>cd /var/tmp/osc-tools/revert-snapshot/revert-clean
 
-echo cleaning Newton with automation
-pybot -d ../results -v testbed:104.robot Clean.robot</command>
+java -jar target/revert-snapshot.jar  config-newton.json
+</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>cd robot
