@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Clean Testbed Environment&#xd;
-Deploy the new OSC from master build</description>
+  <description></description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <jenkins.model.BuildDiscarderProperty>
@@ -60,10 +59,14 @@ java -jar target/revert-snapshot.jar  config-newton.json
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>cd robot
+      <command>cd /var/tmp/osc-tools/revert-snapshot/revert-clean
 
-echo cleaning Ocata with automation
-pybot -d ../results -v testbed:Ocata-3.robot Clean.robot</command>
+java -jar target/revert-snapshot.jar  config-ocata.json
+
+#cd robot
+
+#echo cleaning Ocata with automation
+#pybot -d ../results -v testbed:Ocata-3.robot Clean.robot</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>outputDir=/var/www/vsc-builds/master-all/
