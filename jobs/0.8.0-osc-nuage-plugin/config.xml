@@ -17,7 +17,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/arvindn05/osc-nuage-plugin.git</url>
+        <url>https://github.com/opensecuritycontroller/osc-nuage-plugin.git</url>
         <credentialsId>oscservice-token</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
