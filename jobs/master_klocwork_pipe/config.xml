@@ -39,6 +39,7 @@ PATH+=/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</propert
 		sh &apos;git config --global https.proxy http://proxy-us.intel.com:912&apos;
 		sh &apos;git config --global no.proxy intel.com,.intel.com,10.0.0.0/8,192.168.0.0/16,localhost,127.0.0.0/8,134.134.0.0/16&apos;
         
+        // clean operation if required
         //sh &apos;rm * -rf&apos;
         
         //sh &apos;mkdir -p osc-core&apos;
