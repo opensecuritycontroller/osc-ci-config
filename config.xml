@@ -494,6 +494,7 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[11]/jobNames/comparator"/>
         <string>0.8.0-osc-core</string>
+        <string>0.8.0-osc-nuage-plugin</string>
         <string>0.8.0-osc-ovf</string>
         <string>0.8.0-osc-pan-plugin</string>
         <string>0.8.0-sdn-controller-api</string>
