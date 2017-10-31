@@ -420,7 +420,6 @@
         <string>0.6-osc-core</string>
         <string>0.6-osc-ovf</string>
         <string>0.6-security-mgr-sample-plugin</string>
-        <string>0.6-security-mgr-smc-plugin</string>
         <string>0.8.0-osc-core</string>
         <string>0.8.0-osc-ovf</string>
         <string>0.8.0-sdn-controller-api</string>
