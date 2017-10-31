@@ -426,6 +426,7 @@
         <string>0.8.0-osc-ovf</string>
         <string>0.8.0-sdn-controller-api</string>
         <string>0.8.0-sdn-controller-nsc-plugin</string>
+        <string>0.8.0-security-mgr-nsm-plugin</string>
       </jobNames>
       <jobFilters/>
       <columns>
