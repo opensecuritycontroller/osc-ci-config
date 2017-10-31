@@ -59,9 +59,9 @@ java -jar target/revert-snapshot.jar  config-newton.json
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>#cd /var/tmp/osc-tools/revert-snapshot/revert-clean
+      <command>cd /var/tmp/osc-tools/revert-snapshot/revert-clean
 
-#java -jar target/revert-snapshot.jar  config-ocata.json
+java -jar target/revert-snapshot.jar  config-ocata.json
 
 </command>
     </hudson.tasks.Shell>
