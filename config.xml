@@ -427,6 +427,7 @@
         <string>0.6-vmware-nsx-plugin</string>
         <string>0.8.0-sdn-controller-api</string>
         <string>0.8.0-sdn-controller-nsc-plugin</string>
+        <string>0.8.0-security-mgr-api</string>
       </jobNames>
       <jobFilters/>
       <columns>
