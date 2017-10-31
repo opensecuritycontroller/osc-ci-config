@@ -126,12 +126,13 @@ HOST=10.3.242.124
 
 java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME &quot;$DATASTORE_NAME&quot; &quot;$NETWORK_NAME&quot; $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS
                          
-sleep 200
+sleep 240
 
 python3 /var/tmp/osc-tools/check-openstack-health/check-newton-health.py
+echo $?
 
 python3 /var/tmp/osc-tools/check-openstack-health/check-ocata-health.py
-
+echo $?
 exit 0</command>
     </hudson.tasks.Shell>
   </builders>
