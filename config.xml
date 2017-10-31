@@ -419,7 +419,6 @@
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>0.6-osc-core</string>
         <string>0.6-osc-ovf</string>
-        <string>0.6-sdn-controller-nsc-plugin</string>
         <string>0.6-security-mgr-nsm-plugin</string>
         <string>0.6-security-mgr-sample-plugin</string>
         <string>0.6-security-mgr-smc-plugin</string>
