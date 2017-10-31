@@ -417,7 +417,6 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
-        <string>0.6-security-mgr-sample-plugin</string>
       </jobNames>
       <jobFilters/>
       <columns>
