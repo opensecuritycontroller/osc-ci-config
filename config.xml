@@ -418,7 +418,6 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>0.6-osc-core</string>
-        <string>0.6-osc-ovf</string>
         <string>0.6-security-mgr-sample-plugin</string>
       </jobNames>
       <jobFilters/>
