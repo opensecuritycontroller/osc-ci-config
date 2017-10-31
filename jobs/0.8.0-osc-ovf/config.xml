@@ -122,6 +122,7 @@
           <configs>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
               <properties>branch=0.8.0
+plugin_branch=2.0.0
 all=true
 image_format=vmdk_only</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
