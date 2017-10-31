@@ -37,6 +37,11 @@
           <description>Perform additional build actions or steps to include extra artifacts such as external plugins.</description>
           <defaultValue>false</defaultValue>
         </hudson.model.BooleanParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>plugin_branch</name>
+          <description>Name of plugin branches Which should be build. If branch does not exist in specific repo master will be used instead.</description>
+          <defaultValue>master</defaultValue>
+        </hudson.model.StringParameterDefinition>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
     <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
@@ -71,7 +76,7 @@
     	sh &apos;mkdir -p security-mgr-api&apos;
         dir (&apos;security-mgr-api&apos;) {
     		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
             }
@@ -80,7 +85,7 @@
     	sh &apos;mkdir -p sdn-controller-api&apos;
         dir (&apos;sdn-controller-api&apos;) {
     		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
             }
@@ -89,7 +94,7 @@
 		sh &apos;mkdir -p security-mgr-sample-plugin&apos;
         dir (&apos;security-mgr-sample-plugin&apos;) {
     		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
             }
@@ -98,7 +103,7 @@
 		sh &apos;mkdir -p osc-pan-plugin&apos;
         dir (&apos;osc-pan-plugin&apos;) {
     		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-pan-plugin.git&apos;
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-pan-plugin.git&apos;
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-pan-plugin.git&apos;
             }
@@ -107,7 +112,7 @@
     	sh &apos;mkdir -p sdn-controller-nsc-plugin&apos;
         dir (&apos;sdn-controller-nsc-plugin&apos;) {
     		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
             }
@@ -116,7 +121,7 @@
 		sh &apos;mkdir -p osc-nuage-plugin&apos;
         dir (&apos;osc-nuage-plugin&apos;) {
     		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-nuage-plugin.git&apos;
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-nuage-plugin.git&apos;
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-nuage-plugin.git&apos;
             }
@@ -125,7 +130,7 @@
 		sh &apos;mkdir -p sdn-controller-nsfc-plugin&apos;
         dir (&apos;sdn-controller-nsfc-plugin&apos;) {
     		try {
-    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsfc-plugin.git&apos;
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsfc-plugin.git&apos;
     		} catch (err) {
                 git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsfc-plugin.git&apos;
             }
