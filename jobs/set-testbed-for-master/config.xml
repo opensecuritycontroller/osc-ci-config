@@ -128,6 +128,10 @@ java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &qu
                          
 sleep 200
 
+python3 /var/tmp/osc-tools/check-openstack-health/check-newton-health.py
+
+python3 /var/tmp/osc-tools/check-openstack-health/check-ocata-health.py
+
 exit 0</command>
     </hudson.tasks.Shell>
   </builders>
