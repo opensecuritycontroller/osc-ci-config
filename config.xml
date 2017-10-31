@@ -425,6 +425,7 @@
         <string>0.6-vmware-nsx-api</string>
         <string>0.6-vmware-nsx-plugin</string>
         <string>0.8.0-sdn-controller-api</string>
+        <string>0.8.0-sdn-controller-nsc-plugin</string>
       </jobNames>
       <jobFilters/>
       <columns>
@@ -499,6 +500,7 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[11]/jobNames/comparator"/>
         <string>0.8.0-sdn-controller-api</string>
+        <string>0.8.0-sdn-controller-nsc-plugin</string>
       </jobNames>
       <jobFilters/>
       <columns>
