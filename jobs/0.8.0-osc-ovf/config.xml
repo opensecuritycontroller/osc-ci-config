@@ -23,7 +23,7 @@
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>origin/0.6</name>
+        <name>origin/0.8.0</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -48,7 +48,7 @@
       <antName>default ant</antName>
     </hudson.tasks.Ant>
     <hudson.tasks.Shell>
-      <command>sudo mv -v Build* /var/www/vsc-builds/0.6</command>
+      <command>sudo mv -v Build* /var/www/vsc-builds/0.8.0</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
@@ -121,7 +121,7 @@
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>branch=0.6
+              <properties>branch=0.8.0
 all=true
 image_format=vmdk_only</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
