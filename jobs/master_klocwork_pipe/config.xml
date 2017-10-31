@@ -19,7 +19,7 @@ PATH+=/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</propert
       <triggers>
         <jenkins.triggers.ReverseBuildTrigger>
           <spec></spec>
-          <upstreamProjects>osc-image-format,</upstreamProjects>
+          <upstreamProjects>osc-image-format</upstreamProjects>
           <threshold>
             <name>SUCCESS</name>
             <ordinal>0</ordinal>
