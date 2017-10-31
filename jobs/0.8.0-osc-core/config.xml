@@ -23,7 +23,7 @@
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>origin/0.6</name>
+        <name>origin/0.8.0</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -191,6 +191,12 @@
       <maximumMethodCoverage>0</maximumMethodCoverage>
       <maximumClassCoverage>0</maximumClassCoverage>
       <changeBuildStatus>true</changeBuildStatus>
+      <deltaInstructionCoverage>0</deltaInstructionCoverage>
+      <deltaBranchCoverage>0</deltaBranchCoverage>
+      <deltaComplexityCoverage>0</deltaComplexityCoverage>
+      <deltaLineCoverage>0</deltaLineCoverage>
+      <deltaMethodCoverage>0</deltaMethodCoverage>
+      <deltaClassCoverage>0</deltaClassCoverage>
       <buildOverBuild>false</buildOverBuild>
     </hudson.plugins.jacoco.JacocoPublisher>
     <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.58">
