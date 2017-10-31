@@ -59,17 +59,14 @@ java -jar target/revert-snapshot.jar  config-newton.json
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>cd /var/tmp/osc-tools/revert-snapshot/revert-clean
+      <command>#cd /var/tmp/osc-tools/revert-snapshot/revert-clean
 
-java -jar target/revert-snapshot.jar  config-ocata.json
+#java -jar target/revert-snapshot.jar  config-ocata.json
 
-#cd robot
-
-#echo cleaning Ocata with automation
-#pybot -d ../results -v testbed:Ocata-3.robot Clean.robot</command>
+</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>outputDir=/var/www/vsc-builds/master-all/
+      <command>outputDir=/var/www/vsc-builds/0.8.0-all/
 echo outputDir $outputDir
 buildVersion=`ls -t $outputDir | awk &apos;NR=1&apos; | head -1`
 echo buildVersion $buildVersion
@@ -101,8 +98,16 @@ HOST=10.3.204.107
 #java -jar /var/tmp/deploy-ovf.jar https://10.3.204.201/sdk Administrator@vsphere.local Admin!23 10.3.204.107 /var/www/vsc-builds/master-all/Build1.0.0-SNAPSHOT-58-g6fa6d4d/OSC-1.0.0-SNAPSHOT-58-g6fa6d4d.ovf CI_OSC lun02 Network-320 10.3.205.104 255.255.252.0 10.3.207.251 10.3.86.116
 java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME $DATASTORE_NAME $NETWORK_NAME $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS  
 
+sleep 240
 
-# ending build here till we will know how to deploy to Ocata
+python3 /var/tmp/osc-tools/check-openstack-health/check-newton-health.py
+echo $?
+
+exit 0
+
+# ============================================================ below lines  will be skipped =====================================
+# right now Newton is for 0.8 and Ocata it for master 
+
 
 VSPHERE_SDK_URL=https://10.3.240.201/sdk
 VSPHERE_IP=10.3.240.201:9443
@@ -125,15 +130,11 @@ DATA_CENTER=&apos;Physical Datacenter&apos;
 HOST=10.3.242.124
 
 java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME &quot;$DATASTORE_NAME&quot; &quot;$NETWORK_NAME&quot; $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS
-                         
-sleep 240
-
-python3 /var/tmp/osc-tools/check-openstack-health/check-newton-health.py
-echo $?
-
 python3 /var/tmp/osc-tools/check-openstack-health/check-ocata-health.py
-echo $?
-exit 0</command>
+</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command></command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
