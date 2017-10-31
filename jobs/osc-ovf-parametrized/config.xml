@@ -199,7 +199,7 @@ node(&apos;master&apos;) {
     stage(&apos;Clean &amp; Install&apos;) {
         if(install == &quot;true&quot;) {
             dir (&apos;osc-core&apos;) {
-                if(all == true) {
+                if(all == &quot;true&quot;) {
                     sh &apos;mvn clean install -Dcheckstyle.skip=true -Pall&apos;
                 } else {
                     sh &apos;mvn clean install&apos;
