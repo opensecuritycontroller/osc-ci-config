@@ -29,15 +29,9 @@
           <description></description>
           <choices class="java.util.Arrays$ArrayList">
             <a class="string-array">
-              <string>Multiple-Suites.robot</string>
               <string>VC.robot</string>
               <string>MC.robot</string>
               <string>DA.robot</string>
-              <string>DS.robot</string>
-              <string>SG.robot</string>
-              <string>SG-Binding.robot</string>
-              <string>SFC.robot</string>
-              <string>SG-Binding-SFC.robot</string>
             </a>
           </choices>
         </hudson.model.ChoiceParameterDefinition>
