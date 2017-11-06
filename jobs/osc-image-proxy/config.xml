@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.11.1">
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>10</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+    <org.jenkinsci.plugins.workflow.job.properties.DisableConcurrentBuildsJobProperty/>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>branch</name>
+          <description>Name of branch Which should be build. If branch does not exist in specific repo master will be used instead.</description>
+          <defaultValue>master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.ChoiceParameterDefinition>
+          <name>image_format</name>
+          <description>Image formats which should be generated</description>
+          <choices class="java.util.Arrays$ArrayList">
+            <a class="string-array">
+              <string>vmdk_only</string>
+              <string>qcow2_only</string>
+              <string>qcow2_and_vmdk</string>
+              <string>raw_only</string>
+            </a>
+          </choices>
+        </hudson.model.ChoiceParameterDefinition>
+        <hudson.model.BooleanParameterDefinition>
+          <name>all</name>
+          <description>Perform additional build actions or steps to include extra artifacts such as external plugins.</description>
+          <defaultValue>false</defaultValue>
+        </hudson.model.BooleanParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>plugin_branch</name>
+          <description>Name of plugin branches Which should be build. If branch does not exist in specific repo master will be used instead.</description>
+          <defaultValue>master</defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers/>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.36">
+    <script>node(&apos;master&apos;) {
+    
+	def outputDir = &quot;/var/www/vsc-builds/&quot;+&quot;${branch}&quot;+&quot;-all/&quot;
+
+    stage(&apos;ENV setup&apos;) {
+        env.JAVA_HOME=&quot;${tool name: &apos;Java 8.121&apos;, type: &apos;jdk&apos;}&quot;
+        env.PATH=&quot;${env.JAVA_HOME}/bin:${env.PATH}&quot;
+    }
+    
+    stage(&apos;Clean&apos;) {
+        sh &apos;sudo rm * -rf&apos;
+    }
+    
+    stage(&apos;Git clone&apos;) {
+        
+        sh &apos;mkdir -p osc-core&apos;
+        dir (&apos;osc-core&apos;) {
+    		try {
+    			git branch: &apos;${branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
+            }
+        }
+    	
+    	sh &apos;mkdir -p security-mgr-api&apos;
+        dir (&apos;security-mgr-api&apos;) {
+    		try {
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-api.git&apos;
+            }
+        }
+    	
+    	sh &apos;mkdir -p sdn-controller-api&apos;
+        dir (&apos;sdn-controller-api&apos;) {
+    		try {
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-api.git&apos;
+            }
+        }
+		
+		sh &apos;mkdir -p security-mgr-sample-plugin&apos;
+        dir (&apos;security-mgr-sample-plugin&apos;) {
+    		try {
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/security-mgr-sample-plugin.git&apos;
+            }
+        }
+		
+		sh &apos;mkdir -p osc-pan-plugin&apos;
+        dir (&apos;osc-pan-plugin&apos;) {
+    		try {
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-pan-plugin.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-pan-plugin.git&apos;
+            }
+        }
+    	
+    	sh &apos;mkdir -p sdn-controller-nsc-plugin&apos;
+        dir (&apos;sdn-controller-nsc-plugin&apos;) {
+    		try {
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsc-plugin.git&apos;
+            }
+        }
+		
+		sh &apos;mkdir -p osc-nuage-plugin&apos;
+        dir (&apos;osc-nuage-plugin&apos;) {
+    		try {
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-nuage-plugin.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-nuage-plugin.git&apos;
+            }
+        }
+		
+		sh &apos;mkdir -p sdn-controller-nsfc-plugin&apos;
+        dir (&apos;sdn-controller-nsfc-plugin&apos;) {
+    		try {
+    			git branch: &apos;${plugin_branch}&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsfc-plugin.git&apos;
+    		} catch (err) {
+                git branch: &apos;master&apos;, credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/sdn-controller-nsfc-plugin.git&apos;
+            }
+        }
+    }
+
+    stage(&apos;Build OVF&apos;) {
+        env.JAVA_HOME=&quot;${tool name: &apos;Java 8.121&apos;, type: &apos;jdk&apos;}&quot;
+        env.PATH=&quot;${env.JAVA_HOME}/bin:${env.PATH}&quot;
+        dir (&apos;osc-core&apos;) {
+            def IMG_FORMAT = &apos;vmdk_only&apos;
+            switch (image_format) {
+                 case &quot;qcow2_only&quot; :
+                    echo &quot;Build OSC qcow2 image&quot;
+                    IMG_FORMAT = &apos;qcow2-only&apos;
+                break
+                 case &quot;qcow2_and_vmdk&quot; :
+                    echo &quot;Build OSC qcow2 and vmdk image&quot;
+                    IMG_FORMAT = &apos;qcow2-vmdk&apos;
+                break
+                 case &quot;raw_only&quot; :
+                    echo &quot;Build OSC Raw image&quot;
+                    IMG_FORMAT = &apos;raw-only&apos;
+                break
+            }
+             sh &apos;ant ovf -Dimage-format=&apos;+IMG_FORMAT+ &apos; -Dall=&apos;+all
+        }
+    }
+    
+    stage(&apos;Publish&apos;) {
+       dir (&apos;osc-core&apos;) {
+            buildVersion = sh(script: &quot;ls | grep Build* | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;&quot;, returnStdout: true)
+            echo &apos;Found build: &apos; + buildVersion
+            sh &apos;sudo rm &apos; + outputDir + buildVersion + &apos; -rf&apos;
+            sh &apos;sudo mv -v &apos;+buildVersion+&apos; &apos; + outputDir
+            echo &quot;http://10.3.240.52/&quot; + &quot;${branch}&quot; + &quot;-all/&quot; + &quot;${buildVersion}/&quot;
+       }
+    }
+    
+    //stage(&apos;Clean old builds&apos;) {
+      //  sh &apos;cd &apos;+outputDir+&apos;; sudo rm `ls &apos;+outputDir+&apos; -t | awk \&apos;NR&gt;3\&apos;` -rf&apos;
+//    }
+    
+    stage(&apos;Clean workspace&apos;) {
+        sh &apos;sudo rm * -rf&apos;
+    }
+   
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>

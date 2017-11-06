@@ -395,6 +395,7 @@
         <string>Automation-Parameterized</string>
         <string>Automation-Parameterized-Config</string>
         <string>osc-image-format</string>
+        <string>osc-image-proxy</string>
         <string>osc-ovf-parametrized</string>
       </jobNames>
       <jobFilters/>
