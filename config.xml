@@ -44,16 +44,9 @@
           <permission>hudson.model.Run.Update</permission>
         </permissions>
         <assignedSIDs>
-          <sid>bkaspero</sid>
-          <sid>wardtimx</sid>
           <sid>emanoel1</sid>
-          <sid>nbartlex</sid>
           <sid>anadendl</sid>
           <sid>karimull</sid>
-          <sid>lkodali</sid>
-          <sid>pproskur</sid>
-          <sid>baumderx</sid>
-          <sid>hmthomax</sid>
         </assignedSIDs>
       </role>
       <role name="viewer" pattern=".*">
@@ -64,20 +57,14 @@
           <permission>hudson.model.View.Read</permission>
         </permissions>
         <assignedSIDs>
-          <sid>bsulich</sid>
           <sid>larkins.l.carvalho@intel.com</sid>
           <sid>manishi.rajora@intel.com</sid>
           <sid>karimull</sid>
-          <sid>lkodali</sid>
-          <sid>hmthomax</sid>
           <sid>dmitry.mx.gerenrot@intel.com</sid>
           <sid>llcarval</sid>
-          <sid>wardtimx</sid>
           <sid>emanoel1</sid>
-          <sid>nbartlex</sid>
           <sid>anadendl</sid>
           <sid>anonymous</sid>
-          <sid>baumderx</sid>
           <sid>yaron</sid>
         </assignedSIDs>
       </role>
@@ -100,22 +87,13 @@
           <permission>hudson.model.Run.Update</permission>
         </permissions>
         <assignedSIDs>
-          <sid>aturower</sid>
-          <sid>bsulich</sid>
           <sid>larkins.l.carvalho@intel.com</sid>
           <sid>manishi.rajora@intel.com</sid>
           <sid>karimull</sid>
-          <sid>lkodali</sid>
-          <sid>pproskur</sid>
-          <sid>hmthomax</sid>
-          <sid>bkaspero</sid>
           <sid>dmitry.mx.gerenrot@intel.com</sid>
           <sid>llcarval</sid>
-          <sid>wardtimx</sid>
           <sid>emanoel1</sid>
-          <sid>nbartlex</sid>
           <sid>anadendl</sid>
-          <sid>baumderx</sid>
           <sid>yaron</sid>
         </assignedSIDs>
       </role>
