@@ -156,7 +156,7 @@
                     IMG_FORMAT = &apos;raw-only&apos;
                 break
             }
-             sh &apos;export HTTP_PROXY=http://proxy-mu.intel.com:911; export HTTPS_PROXY=http://proxy-mu.intel.com:912;export FTP_PROXY=http://proxy-mu.intel.com:911;export SOCKS_PROXY=http://proxy-chain.intel.com:1080;export NO_PROXY=intel.com,.intel.com,10.0.0.0/8,192.168.0.0/16,localhost,127.0.0.0/8; ant ovf -Dimage-format=&apos;+IMG_FORMAT+ &apos; -Dall=&apos;+all
+             sh &apos;ant ovf -Dimage-format=&apos;+IMG_FORMAT+ &apos; -Dall=&apos;+all
         }
     }
     
