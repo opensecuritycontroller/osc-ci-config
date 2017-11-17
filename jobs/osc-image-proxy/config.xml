@@ -156,7 +156,7 @@
                     IMG_FORMAT = &apos;raw-only&apos;
                 break
             }
-             sh &apos;ant ovf -Dimage-format=&apos;+IMG_FORMAT+ &apos; -Dall=&apos;+all
+             sh &apos;export http_proxy=http://proxy-us.intel.com:911; export https_proxy=http://proxy-us.intel.com:912;export ftp_proxy=http://proxy-us.intel.com:911;export socks_proxy=http://proxy-us.intel.com:1080;export no_proxy=.corp.nai.org,corp.nai.org,intel.com,.intel.com,10.0.0.0/8,192.168.0.0/16,localhost,.local,127.0.0.0/8,134.134.0.0/16; ant ovf -Dimage-format=&apos;+IMG_FORMAT+ &apos; -Dall=&apos;+all
         }
     }
     
