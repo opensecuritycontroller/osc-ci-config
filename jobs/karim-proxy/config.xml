@@ -39,7 +39,7 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Ant plugin="ant@1.5">
-      <targets>ovf</targets>
+      <targets>ovfOnly</targets>
       <antName>default ant</antName>
     </hudson.tasks.Ant>
   </builders>
