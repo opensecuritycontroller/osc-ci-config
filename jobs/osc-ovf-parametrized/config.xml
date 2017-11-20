@@ -220,7 +220,7 @@ node(&apos;master&apos;) {
                 }
             } else {
                 dir (&apos;osc-core&apos;) {
-                    sh &apos;ant ovf -Dall=&apos;+all
+                    sh &apos;env;ant ovf -Dall=&apos;+all
                 }
             }
         }
