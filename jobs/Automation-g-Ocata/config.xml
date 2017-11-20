@@ -52,8 +52,9 @@ svn update osc_resources
 
 cd robot
 
-echo running automation on Newton
-pybot -d ../results -v testbed:104.robot SanityWithSFC.robot</command>
+echo running sanity no sfc automation on Ocata
+pybot -d ../results -v testbed:Ocata-3.robot SanityNoSFC.robot
+</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
