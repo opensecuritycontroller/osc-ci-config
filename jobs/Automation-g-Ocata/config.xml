@@ -44,9 +44,14 @@ and run the Sanity automation on the Newton environment</description>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>svn update .
+      <command>rm -rf Automation/
+rm -rf osc_resources/
+rm -rf testbeds/
+
+svn update .
 #https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation
 
+mkdir testbeds
 cp Automation/testbeds/* testbeds/.
 
 mkdir osc_resources
