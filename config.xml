@@ -422,6 +422,7 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>Automation-g-Newton</string>
+        <string>Automation-g-Ocata</string>
         <string>Automation-Newton</string>
         <string>Automation-Ocata</string>
         <string>Detailed-Automation-Newton</string>
