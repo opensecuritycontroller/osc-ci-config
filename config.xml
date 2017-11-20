@@ -371,6 +371,7 @@
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>Automation-Parameterized</string>
         <string>Automation-Parameterized-Config</string>
+        <string>karim-osc-parametrized</string>
         <string>karim-proxy</string>
         <string>osc-image-format</string>
         <string>osc-image-proxy</string>
