@@ -44,11 +44,12 @@ and run the Sanity automation on the Newton environment</description>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>svn update testbeds
-svn update osc_resources
+      <command>svn checkout https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation
 
-#svn checkout https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation/testbeds  testbeds
-#svn checkout https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation/osc_resources  osc_resources
+cp Automation/testbeds/* testbeds/.
+
+mkdir osc_resources
+cp Automation/osc_resources/* osc_resources/.
 
 cd robot
 
