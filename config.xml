@@ -421,12 +421,12 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
+        <string>Automation-Detailed-Ocata</string>
         <string>Automation-Newton</string>
         <string>Automation-Ocata</string>
         <string>Automation-Sanity-Newton</string>
         <string>Automation-Sanity-Ocata</string>
         <string>Detailed-Automation-Newton</string>
-        <string>Detailed-Automation-Ocata</string>
         <string>set-testbed-for-master</string>
       </jobNames>
       <jobFilters/>

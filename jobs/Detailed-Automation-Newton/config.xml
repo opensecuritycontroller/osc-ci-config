@@ -39,7 +39,7 @@
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>Automation-Sanity-Newton, </upstreamProjects>
+      <upstreamProjects>Automation-Sanity-Newton,</upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
