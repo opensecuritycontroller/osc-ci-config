@@ -1,7 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
   <actions/>
-  <description>Run all available tests  (even some that will fail due to unsupported on this environment - but passing with different environments)</description>
+  <description>Run all available tests  (even some that will fail due to unsupported on this environment - but passing with different environments)&#xd;
+&#xd;
+It uses automation script from GitHub&#xd;
+Uses Testbeds from svn</description>
   <keepDependencies>false</keepDependencies>
   <properties>
     <jenkins.model.BuildDiscarderProperty>
