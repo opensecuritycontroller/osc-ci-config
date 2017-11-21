@@ -13,24 +13,22 @@
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
   </properties>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.8">
-    <locations>
-      <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation</remote>
-        <credentialsId>308bda83-1db3-4e11-8969-2f38a0f72fb9</credentialsId>
-        <local>.</local>
-        <depthOption>infinity</depthOption>
-        <ignoreExternalsOption>true</ignoreExternalsOption>
-      </hudson.scm.SubversionSCM_-ModuleLocation>
-    </locations>
-    <excludedRegions></excludedRegions>
-    <includedRegions></includedRegions>
-    <excludedUsers></excludedUsers>
-    <excludedRevprop></excludedRevprop>
-    <excludedCommitMessages></excludedCommitMessages>
-    <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
-    <ignoreDirPropChanges>false</ignoreDirPropChanges>
-    <filterChangelog>false</filterChangelog>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/opensecuritycontroller/osc-tests.git</url>
+        <credentialsId>oscservice-token</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
   </scm>
   <assignedNode>robotslave</assignedNode>
   <canRoam>false</canRoam>
@@ -41,7 +39,7 @@
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>Automation-Newton</upstreamProjects>
+      <upstreamProjects>Automation-Sanity-Newton, </upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
@@ -53,7 +51,19 @@
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd robot
+      <command>rm -rf Automation/
+rm -rf osc_resources/
+rm -rf testbeds/
+
+svn checkout https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation
+
+mkdir testbeds
+cp Automation/testbeds/* testbeds/.
+
+mkdir osc_resources
+cp Automation/osc_resources/* osc_resources/.
+
+cd robot
 
 echo running detailed automation on Newton
 pybot -d ../results -v testbed:104.robot -A Multiple-Suites-Full.robot</command>
