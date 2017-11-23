@@ -216,7 +216,7 @@ node(&apos;master&apos;) {
         } else {
             if(install == &quot;true&quot;) {
                 dir (&apos;osc-core&apos;) {
-                    sh &apos;ant ovfOnly ovfCopy&apos;
+                    sh &apos;env;ant ovfOnly ovfCopy&apos;
                 }
             } else {
                 dir (&apos;osc-core&apos;) {
