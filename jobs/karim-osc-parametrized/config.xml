@@ -33,7 +33,7 @@
         <hudson.model.BooleanParameterDefinition>
           <name>install</name>
           <description>If true, runs maven build with unit tests</description>
-          <defaultValue>false</defaultValue>
+          <defaultValue>true</defaultValue>
         </hudson.model.BooleanParameterDefinition>
         <hudson.model.BooleanParameterDefinition>
           <name>enable_web_tests</name>
@@ -203,7 +203,7 @@ node(&apos;master&apos;) {
         } else {
             if(install == &quot;true&quot;) {
                 dir (&apos;osc-core&apos;) {
-                    sh &apos;ant ovfOnly ovfCopy&apos;
+                    sh sh &apos;ant ovf -Dall=&apos;+all
                 }
             } else {
                 dir (&apos;osc-core&apos;) {
