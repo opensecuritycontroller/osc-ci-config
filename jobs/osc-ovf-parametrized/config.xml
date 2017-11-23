@@ -33,7 +33,7 @@
         <hudson.model.BooleanParameterDefinition>
           <name>install</name>
           <description>If true, runs maven build with unit tests</description>
-          <defaultValue>false</defaultValue>
+          <defaultValue>true</defaultValue>
         </hudson.model.BooleanParameterDefinition>
         <hudson.model.BooleanParameterDefinition>
           <name>enable_web_tests</name>
