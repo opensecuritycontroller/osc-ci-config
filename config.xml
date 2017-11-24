@@ -57,13 +57,13 @@
           <permission>hudson.model.View.Read</permission>
         </permissions>
         <assignedSIDs>
-          <sid>larkins.l.carvalho@intel.com</sid>
-          <sid>manishi.rajora@intel.com</sid>
-          <sid>karimull</sid>
           <sid>dmitry.mx.gerenrot@intel.com</sid>
           <sid>llcarval</sid>
+          <sid>larkins.l.carvalho@intel.com</sid>
           <sid>emanoel1</sid>
+          <sid>manishi.rajora@intel.com</sid>
           <sid>anadendl</sid>
+          <sid>karimull</sid>
           <sid>anonymous</sid>
           <sid>yaron</sid>
         </assignedSIDs>
@@ -87,13 +87,13 @@
           <permission>hudson.model.Run.Update</permission>
         </permissions>
         <assignedSIDs>
-          <sid>larkins.l.carvalho@intel.com</sid>
-          <sid>manishi.rajora@intel.com</sid>
-          <sid>karimull</sid>
           <sid>dmitry.mx.gerenrot@intel.com</sid>
           <sid>llcarval</sid>
+          <sid>larkins.l.carvalho@intel.com</sid>
           <sid>emanoel1</sid>
+          <sid>manishi.rajora@intel.com</sid>
           <sid>anadendl</sid>
+          <sid>karimull</sid>
           <sid>yaron</sid>
         </assignedSIDs>
       </role>
