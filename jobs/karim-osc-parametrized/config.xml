@@ -197,7 +197,7 @@ node(&apos;master&apos;) {
     }
     
     environment {
-        http_proxy = https://proxy-us.intel.com:911
+        http_proxy = &apos;https://proxy-us.intel.com:911&apos;
     }
     
     
