@@ -119,7 +119,7 @@ node(&apos;master&apos;) {
         }		              
     	
     	if(force_clean_workspace == &quot;true&quot;){
-        	sh &apos;mkdir -p security-mgr-api&apos;
+        	bash &apos;mkdir -p security-mgr-api&apos;
     	}
         dir (&apos;security-mgr-api&apos;) {
     		try {
