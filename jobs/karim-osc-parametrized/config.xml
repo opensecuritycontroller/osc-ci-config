@@ -196,6 +196,10 @@ node(&apos;master&apos;) {
         }
     }
     
+    environment {
+        http_proxy = https://proxy-us.intel.com:911
+    }
+    
     
     stage(&apos;Build OVF&apos;) {
         if(skip_ovf_build == &quot;true&quot;){
