@@ -204,12 +204,12 @@ node(&apos;master&apos;) {
             if(install == &quot;true&quot;) {
                 dir (&apos;osc-core&apos;) {
                   sh &quot;#!/bin/bash \n&quot; + 
-                 &quot;ant ovfOnly&quot;
+                 &quot;ant ovf&quot;
                 }
             } else {
                 dir (&apos;osc-core&apos;) {
                    sh &quot;#!/bin/bash \n&quot; + 
-                &quot;ant ovfOnly&quot;
+                &quot;ant ovf&quot;
                 }
             }
         }
