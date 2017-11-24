@@ -203,15 +203,13 @@ node(&apos;master&apos;) {
         } else {
             if(install == &quot;true&quot;) {
                 dir (&apos;osc-core&apos;) {
-                   sh &apos;&apos;&apos; #1/bin/bash
-                   ant ovf -Dall=&apos;+all
-                   &apos;&apos;&apos;
+                  sh &quot;#!/bin/bash \n&quot; + 
+                 &quot;ant ovfOnly&quot;
                 }
             } else {
                 dir (&apos;osc-core&apos;) {
-                   sh &apos;&apos;&apos; #1/bin/bash
-                   ant ovf -Dall=&apos;+all
-                   &apos;&apos;&apos;
+                   sh &quot;#!/bin/bash \n&quot; + 
+                &quot;ant ovfOnly&quot;
                 }
             }
         }
