@@ -88,9 +88,6 @@ def robotFrameworkTestsDir = &quot;/home/jenkins/repos/robottests/&quot;
 def OSC_VM_IP=&apos;&apos;
 	
 node(&apos;master&apos;) {
-    environment {
-        http_proxy = &apos;https://proxy-us.intel.com:911&apos;
-    }
 	
     stage(&apos;ENV setup master&apos;) {
         env.JAVA_HOME=&quot;${tool name: &apos;Java 8.121&apos;, type: &apos;jdk&apos;}&quot;
