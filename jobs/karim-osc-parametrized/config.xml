@@ -203,11 +203,11 @@ node(&apos;master&apos;) {
         } else {
             if(install == &quot;true&quot;) {
                 dir (&apos;osc-core&apos;) {
-                   sh &apos;ant ovf -Dall=&apos;+all
+                   bash &apos;ant ovf -Dall=&apos;+all
                 }
             } else {
                 dir (&apos;osc-core&apos;) {
-                    sh &apos;ant ovf -Dall=&apos;+all
+                    bash &apos;ant ovf -Dall=&apos;+all
                 }
             }
         }
