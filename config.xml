@@ -486,19 +486,7 @@
           <default>
             <comparator class="hudson.util.CaseInsensitiveComparator"/>
           </default>
-          <int>6</int>
-          <string>FTP_PROXY</string>
-          <string>http://proxy-us.intel.com:911</string>
-          <string>HTTP_PROXY</string>
-          <string>http://proxy-us.intel.com:911</string>
-          <string>HTTPS_PROXY</string>
-          <string>http://proxy-us.intel.com:912</string>
-          <string>MAVEN_OPTS</string>
-          <string>-Xmx2048m -XX:MaxPermSize=2048m</string>
-          <string>NO_PROXY</string>
-          <string>.corp.nai.org,corp.nai.org,intel.com,.intel.com,10.0.0.0/8,192.168.0.0/16,localhost,.local,127.0.0.0/8,134.134.0.0/16</string>
-          <string>SOCKS_PROXY</string>
-          <string>http://proxy-us.intel.com:1080</string>
+          <int>0</int>
         </tree-map>
       </envVars>
     </hudson.slaves.EnvironmentVariablesNodeProperty>
