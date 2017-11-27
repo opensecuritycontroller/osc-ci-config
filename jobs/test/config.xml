@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <project>
+  <description></description>
   <keepDependencies>false</keepDependencies>
   <properties/>
   <scm class="hudson.scm.NullSCM"/>
@@ -7,9 +8,14 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <jdk>(System)</jdk>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
-  <builders/>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>env</command>
+    </hudson.tasks.Shell>
+  </builders>
   <publishers/>
   <buildWrappers/>
 </project>
