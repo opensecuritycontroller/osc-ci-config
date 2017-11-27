@@ -486,7 +486,9 @@
           <default>
             <comparator class="hudson.util.CaseInsensitiveComparator"/>
           </default>
-          <int>0</int>
+          <int>1</int>
+          <string>KARIM_TEST</string>
+          <string>foo</string>
         </tree-map>
       </envVars>
     </hudson.slaves.EnvironmentVariablesNodeProperty>
