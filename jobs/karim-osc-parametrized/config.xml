@@ -202,11 +202,11 @@ node(&apos;master&apos;) {
         } else {
             if(install == &quot;true&quot;) {
                 dir (&apos;osc-core&apos;) {
-                  sh &apos;ant ovf&apos;
+                  sh &apos;source /etc/profile.d/proxy.sh;ant ovf&apos;
                 }
             } else {
                 dir (&apos;osc-core&apos;) {
-                   sh &apos;ant ovf&apos;
+                   sh &apos;source /etc/profile.d/proxy.sh;ant ovf&apos;
                 }
             }
         }
