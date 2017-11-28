@@ -486,7 +486,9 @@
           <default>
             <comparator class="hudson.util.CaseInsensitiveComparator"/>
           </default>
-          <int>1</int>
+          <int>2</int>
+          <string>http_proxy</string>
+          <string>http://proxy-us.intel.com:911</string>
           <string>karim_test</string>
           <string>foo</string>
         </tree-map>
