@@ -47,6 +47,7 @@
           <sid>emanoel1</sid>
           <sid>anadendl</sid>
           <sid>karimull</sid>
+          <sid>appaji</sid>
         </assignedSIDs>
       </role>
       <role name="viewer" pattern=".*">
