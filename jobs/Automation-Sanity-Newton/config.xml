@@ -43,7 +43,7 @@ and run the Sanity automation on the Newton environment</description>
   <triggers>
     <jenkins.triggers.ReverseBuildTrigger>
       <spec></spec>
-      <upstreamProjects>set-testbed-for-0.8-and-master, </upstreamProjects>
+      <upstreamProjects>set-test-beds-for-master,</upstreamProjects>
       <threshold>
         <name>SUCCESS</name>
         <ordinal>0</ordinal>
