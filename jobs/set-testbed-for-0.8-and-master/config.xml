@@ -13,25 +13,7 @@
       </strategy>
     </jenkins.model.BuildDiscarderProperty>
   </properties>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.8">
-    <locations>
-      <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation</remote>
-        <credentialsId>308bda83-1db3-4e11-8969-2f38a0f72fb9</credentialsId>
-        <local>.</local>
-        <depthOption>infinity</depthOption>
-        <ignoreExternalsOption>true</ignoreExternalsOption>
-      </hudson.scm.SubversionSCM_-ModuleLocation>
-    </locations>
-    <excludedRegions></excludedRegions>
-    <includedRegions></includedRegions>
-    <excludedUsers></excludedUsers>
-    <excludedRevprop></excludedRevprop>
-    <excludedCommitMessages></excludedCommitMessages>
-    <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
-    <ignoreDirPropChanges>false</ignoreDirPropChanges>
-    <filterChangelog>false</filterChangelog>
-  </scm>
+  <scm class="hudson.scm.NullSCM"/>
   <assignedNode>master</assignedNode>
   <canRoam>false</canRoam>
   <disabled>false</disabled>
@@ -66,7 +48,7 @@ java -jar target/revert-snapshot.jar  config-ocata.json
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command># =============== deploy OSC for Newton from 0.8 ===================
+      <command># =============== deploy OSC for Newton from master ===================
 
 outputDir=/var/www/vsc-builds/master-all/
 echo outputDir $outputDir
