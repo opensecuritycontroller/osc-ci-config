@@ -116,7 +116,7 @@ pybot -d ../results -v testbed:Ocata-3.robot -A Multiple-Suites-Full.robot</comm
       <runAfterResultFinalised>true</runAfterResultFinalised>
     </com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier>
     <hudson.tasks.Mailer plugin="mailer@1.20">
-      <recipients>yaron.choma@intel.com</recipients>
+      <recipients>osc-scrum-all@intel.com</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>false</sendToIndividuals>
     </hudson.tasks.Mailer>
