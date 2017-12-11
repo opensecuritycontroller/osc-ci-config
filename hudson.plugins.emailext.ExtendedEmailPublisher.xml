@@ -16,8 +16,8 @@ Check console output at $BUILD_URL to view the results.</defaultBody>
     <string>hudson.plugins.emailext.plugins.trigger.FailureTrigger</string>
   </defaultTriggerIds>
   <maxAttachmentSize>-1</maxAttachmentSize>
-  <recipientList>arvind.nadendla@intel.com</recipientList>
-  <defaultReplyTo>arvind.nadendla@intel.com</defaultReplyTo>
+  <recipientList>arvind.nadendla@intel.com, sudhir.appaji@intel.com</recipientList>
+  <defaultReplyTo>arvind.nadendla@intel.com, sudhir.appaji@intel.com</defaultReplyTo>
   <excludedCommitters></excludedCommitters>
   <overrideGlobalSettings>true</overrideGlobalSettings>
   <precedenceBulk>false</precedenceBulk>
