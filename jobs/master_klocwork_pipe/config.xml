@@ -75,7 +75,7 @@ PATH+=/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</propert
    
    stage(&apos;Build kwmaven&apos;) {
          def workspace = pwd()
-         sh &quot;/home/jenkins/jenkins-run-kw.sh ${WORKSPACE}/osc-core arvind.nadendla@intel.com osc&quot;
+         sh &quot;/home/jenkins/jenkins-run-kw.sh ${WORKSPACE}/osc-core arvind.nadendla@intel.com,sudhir.appaji@intel.com osc&quot;
    }
    
    stage(&apos;Publish report&apos;) {
