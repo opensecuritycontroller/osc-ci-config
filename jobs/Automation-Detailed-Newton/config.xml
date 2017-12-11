@@ -54,7 +54,9 @@ Uses Testbeds from svn</description>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>rm -rf Automation/
+      <command>. /etc/profile.d/proxy.sh
+
+rm -rf Automation/
 rm -rf osc_resources/
 rm -rf testbeds/
 
