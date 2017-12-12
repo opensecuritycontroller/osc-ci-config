@@ -5,10 +5,10 @@
     <jenkins.security.ApiTokenProperty>
       <apiToken>4bZXQTPPajFDU7a+DlsxL4CqS1U7gK4Vr6OxcT5Lf5/U/MDv5CQSRsiZYXL6DzKL</apiToken>
     </jenkins.security.ApiTokenProperty>
-    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.6">
+    <com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty plugin="credentials@2.1.14">
       <domainCredentialsMap class="hudson.util.CopyOnWriteMap$Hash"/>
     </com.cloudbees.plugins.credentials.UserCredentialsProvider_-UserCredentialsProperty>
-    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.45">
+    <hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty plugin="email-ext@2.58">
       <triggers/>
     </hudson.plugins.emailext.watching.EmailExtWatchAction_-UserProperty>
     <hudson.model.MyViewsProperty>
@@ -20,6 +20,13 @@
           <filterQueue>false</filterQueue>
           <properties class="hudson.model.View$PropertyList"/>
         </hudson.model.AllView>
+        <hudson.model.ProxyView>
+          <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
+          <name>Automation</name>
+          <filterExecutors>false</filterExecutors>
+          <filterQueue>false</filterQueue>
+          <properties class="hudson.model.View$PropertyList"/>
+        </hudson.model.ProxyView>
       </views>
     </hudson.model.MyViewsProperty>
     <hudson.model.PaneStatusProperties>
@@ -31,7 +38,7 @@
     <hudson.security.HudsonPrivateSecurityRealm_-Details>
       <passwordHash>#jbcrypt:$2a$10$8uliNSd8k4kWpocO0EiOwu9Rv/3kkCPH8hU87Ek66HZt4u7O2ZCwu</passwordHash>
     </hudson.security.HudsonPrivateSecurityRealm_-Details>
-    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.17">
+    <hudson.tasks.Mailer_-UserProperty plugin="mailer@1.20">
       <emailAddress>yaron.choma@intel.com</emailAddress>
     </hudson.tasks.Mailer_-UserProperty>
     <jenkins.security.LastGrantedAuthoritiesProperty>
@@ -40,5 +47,8 @@
       </roles>
       <timestamp>1489763739232</timestamp>
     </jenkins.security.LastGrantedAuthoritiesProperty>
+    <org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty plugin="display-url-api@2.0">
+      <providerId>default</providerId>
+    </org.jenkinsci.plugins.displayurlapi.user.PreferredProviderUserProperty>
   </properties>
 </user>
