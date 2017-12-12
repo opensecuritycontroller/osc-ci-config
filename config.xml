@@ -425,7 +425,6 @@
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>Automation-Detailed-Newton</string>
         <string>Automation-Detailed-Ocata</string>
-        <string>Automation-Ocata</string>
         <string>Automation-Sanity-Newton</string>
         <string>Automation-Sanity-Ocata</string>
       </jobNames>
