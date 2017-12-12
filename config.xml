@@ -400,7 +400,6 @@
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
-        <string>robot_automated_tests</string>
       </jobNames>
       <jobFilters/>
       <columns>
