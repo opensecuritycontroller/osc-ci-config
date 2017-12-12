@@ -401,7 +401,6 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>robot_automated_tests</string>
-        <string>set_testbed_for_robot_tests</string>
       </jobNames>
       <jobFilters/>
       <columns>
