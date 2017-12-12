@@ -22,10 +22,11 @@
         </hudson.model.AllView>
         <hudson.model.ProxyView>
           <owner class="hudson.model.MyViewsProperty" reference="../../.."/>
-          <name>Automation</name>
+          <name>My Automation</name>
           <filterExecutors>false</filterExecutors>
           <filterQueue>false</filterQueue>
           <properties class="hudson.model.View$PropertyList"/>
+          <proxiedViewName>automation</proxiedViewName>
         </hudson.model.ProxyView>
       </views>
     </hudson.model.MyViewsProperty>
