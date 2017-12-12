@@ -394,28 +394,6 @@
     </listView>
     <listView>
       <owner class="hudson" reference="../../.."/>
-      <name>automation-old</name>
-      <filterExecutors>false</filterExecutors>
-      <filterQueue>false</filterQueue>
-      <properties class="hudson.model.View$PropertyList"/>
-      <jobNames>
-        <comparator class="hudson.util.CaseInsensitiveComparator"/>
-      </jobNames>
-      <jobFilters/>
-      <columns>
-        <hudson.views.StatusColumn/>
-        <hudson.views.WeatherColumn/>
-        <hudson.views.JobColumn/>
-        <hudson.views.LastSuccessColumn/>
-        <hudson.views.LastFailureColumn/>
-        <hudson.views.LastDurationColumn/>
-        <hudson.views.BuildButtonColumn/>
-        <hudson.plugins.robot.view.RobotListViewColumn plugin="robot@1.6.4"/>
-      </columns>
-      <recurse>false</recurse>
-    </listView>
-    <listView>
-      <owner class="hudson" reference="../../.."/>
       <name>automation</name>
       <filterExecutors>false</filterExecutors>
       <filterQueue>false</filterQueue>
@@ -450,7 +428,7 @@
       <filterQueue>false</filterQueue>
       <properties class="hudson.model.View$PropertyList"/>
       <jobNames>
-        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[10]/jobNames/comparator"/>
+        <comparator class="hudson.util.CaseInsensitiveComparator" reference="../../../listView[9]/jobNames/comparator"/>
         <string>0.8.0-osc-core</string>
         <string>0.8.0-osc-nuage-plugin</string>
         <string>0.8.0-osc-ovf</string>
