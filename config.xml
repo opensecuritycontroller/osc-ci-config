@@ -430,7 +430,6 @@
         <string>Automation-Ocata</string>
         <string>Automation-Sanity-Newton</string>
         <string>Automation-Sanity-Ocata</string>
-        <string>set-testbed-for-master</string>
       </jobNames>
       <jobFilters/>
       <columns>
