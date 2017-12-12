@@ -424,8 +424,11 @@
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>Automation-Detailed-Newton</string>
         <string>Automation-Detailed-Ocata</string>
+        <string>Automation-Parameterized</string>
+        <string>Automation-Parameterized-Config</string>
         <string>Automation-Sanity-Newton</string>
         <string>Automation-Sanity-Ocata</string>
+        <string>set-test-beds-for-master</string>
       </jobNames>
       <jobFilters/>
       <columns>
