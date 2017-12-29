@@ -17,7 +17,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/arvindn05/osc-pan-plugin.git</url>
+        <url>https://github.com/opensecuritycontroller/osc-pan-plugin.git</url>
         <credentialsId>oscservice-token</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
@@ -143,7 +143,7 @@
   </reporters>
   <publishers>
     <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.58">
-      <recipientList>arvind.nadendla@intel.com;emanoel.xavier@intel.com</recipientList>
+      <recipientList>arvind.nadendla@intel.com,emanoel.xavier@intel.com,sudhir.appaji@intel.com</recipientList>
       <configuredTriggers>
         <hudson.plugins.emailext.plugins.trigger.FailureTrigger>
           <email>
