@@ -48,6 +48,7 @@
           <sid>anadendl</sid>
           <sid>karimull</sid>
           <sid>appaji</sid>
+          <sid>gbhugar</sid>
         </assignedSIDs>
       </role>
       <role name="viewer" pattern=".*">
@@ -66,6 +67,7 @@
           <sid>manishi.rajora@intel.com</sid>
           <sid>karimull</sid>
           <sid>anonymous</sid>
+          <sid>gbhugar</sid>
           <sid>rpravee1</sid>
           <sid>yaron</sid>
         </assignedSIDs>
@@ -96,6 +98,7 @@
           <sid>anadendl</sid>
           <sid>manishi.rajora@intel.com</sid>
           <sid>karimull</sid>
+          <sid>gbhugar</sid>
           <sid>rpravee1</sid>
           <sid>yaron</sid>
         </assignedSIDs>
