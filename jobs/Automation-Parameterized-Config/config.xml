@@ -229,28 +229,6 @@ pybot -d ../results -v ParamCfg:true -v testbed:${file} ${how} ${RobotSuite}
     </hudson.tasks.Shell>
   </builders>
   <publishers>
-    <htmlpublisher.HtmlPublisher plugin="htmlpublisher@1.13">
-      <reportTargets>
-        <htmlpublisher.HtmlPublisherTarget>
-          <reportName>Automation Report</reportName>
-          <reportDir>../results/</reportDir>
-          <reportFiles>Report.html</reportFiles>
-          <alwaysLinkToLastBuild>true</alwaysLinkToLastBuild>
-          <reportTitles></reportTitles>
-          <keepAll>true</keepAll>
-          <allowMissing>false</allowMissing>
-        </htmlpublisher.HtmlPublisherTarget>
-        <htmlpublisher.HtmlPublisherTarget>
-          <reportName>HTML Report</reportName>
-          <reportDir>../results/</reportDir>
-          <reportFiles>index.html</reportFiles>
-          <alwaysLinkToLastBuild>false</alwaysLinkToLastBuild>
-          <reportTitles></reportTitles>
-          <keepAll>false</keepAll>
-          <allowMissing>false</allowMissing>
-        </htmlpublisher.HtmlPublisherTarget>
-      </reportTargets>
-    </htmlpublisher.HtmlPublisher>
     <hudson.plugins.robot.RobotPublisher plugin="robot@1.6.4">
       <outputPath>results/</outputPath>
       <reportFileName>report.html</reportFileName>
