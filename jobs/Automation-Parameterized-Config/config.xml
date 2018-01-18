@@ -214,15 +214,6 @@ echo &quot;${Config}&quot; &gt; $file
 
 cd ../robot
 
-: &apos;
-if [[ ( &quot;${RobotSuite}&quot; = &quot;Multiple-Suites-Full.robot&quot; ) ||\
-      ( &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ) ||\
-      ( &quot;${RobotSuite}&quot; = &quot;SanityNoSFC.robot&quot; ) ||\
-      ( &quot;${RobotSuite}&quot; = &quot;SanityWithSFC.robot&quot; ) ]]
-then
-    how=&apos;-A&apos;
-fi
-&apos;
 
 if [ \( &quot;${RobotSuite}&quot; = &quot;Multiple-Suites-Full.robot&quot; \) ||\
      \( &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; \) ||\
