@@ -157,24 +157,22 @@ ${sfc-2-name}=   second-SFC</defaultValue>
       </parameterDefinitions>
     </hudson.model.ParametersDefinitionProperty>
   </properties>
-  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.8">
-    <locations>
-      <hudson.scm.SubversionSCM_-ModuleLocation>
-        <remote>https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation</remote>
-        <credentialsId>308bda83-1db3-4e11-8969-2f38a0f72fb9</credentialsId>
-        <local>.</local>
-        <depthOption>infinity</depthOption>
-        <ignoreExternalsOption>true</ignoreExternalsOption>
-      </hudson.scm.SubversionSCM_-ModuleLocation>
-    </locations>
-    <excludedRegions></excludedRegions>
-    <includedRegions></includedRegions>
-    <excludedUsers></excludedUsers>
-    <excludedRevprop></excludedRevprop>
-    <excludedCommitMessages></excludedCommitMessages>
-    <workspaceUpdater class="hudson.scm.subversion.UpdateUpdater"/>
-    <ignoreDirPropChanges>false</ignoreDirPropChanges>
-    <filterChangelog>false</filterChangelog>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/opensecuritycontroller/osc-tests.git</url>
+        <credentialsId>oscservice-token</credentialsId>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
   </scm>
   <assignedNode>robotslave</assignedNode>
   <canRoam>false</canRoam>
@@ -186,7 +184,22 @@ ${sfc-2-name}=   second-SFC</defaultValue>
   <concurrentBuild>false</concurrentBuild>
   <builders>
     <hudson.tasks.Shell>
-      <command>cd testbeds
+      <command>. /etc/profile.d/proxy.sh
+
+rm -rf Automation/
+rm -rf osc_resources/
+rm -rf testbeds/
+
+svn checkout https://ssvn.sc.intel.com/dev/osc/vmidc/trunk/automation/Automation
+
+mkdir testbeds
+cp Automation/testbeds/* testbeds/.
+
+mkdir osc_resources
+cp Automation/osc_resources/* osc_resources/.
+
+
+cd testbeds
 
 now=$(date +&quot;%T&quot;)
 now=`echo &quot;$now&quot; | sed -r &apos;s/[:]+/_/g&apos;`
@@ -196,19 +209,17 @@ echo &quot;${Config}&quot; &gt; $file
 
 cd ../robot
 
-if [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
+if [[ ( &quot;${RobotSuite}&quot; = &quot;Multiple-Suites-Full.robot&quot; ) ||\
+      ( &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ) ||\
+      ( &quot;${RobotSuite}&quot; = &quot;SanityNoSFC.robot&quot; ) ||\
+      ( &quot;${RobotSuite}&quot; = &quot;SanityWithSFC.robot&quot; ) ]]
 then
     how=&apos;-A&apos;
 fi
 
 
+pybot -d ../results -v ParamCfg:true -v testbed:$file -v ip-osc:${OscIP} ${how} ${RobotSuite}
 
-if [ &quot;${OscIP}&quot; = &quot;&quot; ]
-then
-	pybot -d ../results -v ParamCfg:true -v testbed:$file ${how} ${RobotSuite}
-else
-	pybot -d ../results -v ParamCfg:true -v testbed:$file -v ip-osc:${OscIP} ${how} ${RobotSuite}
-fi
 </command>
     </hudson.tasks.Shell>
   </builders>
