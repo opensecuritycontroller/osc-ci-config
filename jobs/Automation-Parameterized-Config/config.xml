@@ -85,8 +85,11 @@ ${ds-region}=   RegionOne
 
 ${ds-selction}=  can be &apos;All&apos; without the quotes or specific hosts like: hosts:compute-node-name
 ${ds-selection-byhost}=  can be single host hosts:compute-node-name  or as a list with &apos;,&apos; as seperator hosts:compute-node-1,compute-node-2,...
-${ds-selection-byAZ}=
-${ds-selection-byHA}=
+
+#next two are not needed for now:
+${ds-selection-byAZ}=  zone:    followed by a comma seperated list of availability zones
+${ds-selection-byHA}=  hostAggregate:  followed by a comma seperated list of host agregates
+
 
 ${ds-mgmt-net}=  mgmt-net
 ${ds-insp-net}=  insp-net
@@ -130,7 +133,9 @@ ${sg-test-vm}=   testvm-1
 ${ostack-ip}=  ${vc-providerIP}
 
 ${sfc-name}=   default-SFC
-${sfc-2-name}=   second-SFC</defaultValue>
+${sfc-2-name}=   second-SFC
+
+</defaultValue>
         </hudson.model.TextParameterDefinition>
         <hudson.model.ChoiceParameterDefinition>
           <name>RobotSuite</name>
