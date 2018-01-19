@@ -207,10 +207,10 @@ cp Automation/osc_resources/* osc_resources/.
 cd testbeds
 
 now=$(date +&quot;%T&quot;)
-now=`echo &quot;$now&quot; | sed -r &apos;s/[:]+/_/g&apos;`
-file=&quot;$now.robot&quot;
+now=`echo &quot;${now}&quot; | sed -r &apos;s/[:]+/_/g&apos;`
+file=&quot;${now}.robot&quot;
 
-echo &quot;${Config}&quot; &gt; $file
+echo &quot;${Config}&quot; &gt; ${file}
 
 
 cd ../robot
@@ -251,7 +251,7 @@ pybot -d ../results -v ParamCfg:true -v testbed:${file} ${how} ${RobotSuite}
       <runAfterResultFinalised>true</runAfterResultFinalised>
     </com.michelin.cio.hudson.plugins.copytoslave.CopyToMasterNotifier>
     <hudson.tasks.Mailer plugin="mailer@1.20">
-      <recipients>yaro.choma@intel.com</recipients>
+      <recipients>yaron.choma@intel.com</recipients>
       <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
       <sendToIndividuals>true</sendToIndividuals>
     </hudson.tasks.Mailer>
