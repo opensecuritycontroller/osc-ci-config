@@ -216,9 +216,7 @@ echo &quot;${Config}&quot; &gt; ${file}
 cd ../robot
 
 if   [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites-Full.robot&quot; ] ||\
-     [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ] ||\
-     [ &quot;${RobotSuite}&quot; = &quot;SanityNoSFC.robot&quot; ] ||\
-     [ &quot;${RobotSuite}&quot; = &quot;SanityWithSFC.robot&quot; ]
+     [ &quot;${RobotSuite}&quot; = &quot;Multiple-Suites.robot&quot; ]
 then
     how=&apos;-A&apos;
 fi
