@@ -55,7 +55,7 @@ ${mc-pass}=  admin123
 ${mc-apikey}=
 
 ${nsm-cer-name}=  notUse
-${nsm-cer-body}=  -----BEGIN CERTIFICATE-----\n MIID6TCCAtGgAwIBAgIEa7J6ZzANBgkqhkiG9w0BAQsFADCBpDEkMCIGCSqGSIb3DQEJARYVQWRtaW5pc3RyYXRvckBXSU4yMDA4MRAwDgYDVQQDEwdXSU4yMDA4MSUwIwYDVQQLExxJbnRydXNpb24gUHJldmVudGlvbiBTeXN0ZW1zMRMwEQYDVQQKEwpNY0FmZWUgSW5jMRQwEgYDVQQHEwtTYW50YSBDbGFyYTELMAkGA1UECBMCQ0ExCzAJBgNVBAYTAlVTMB4XDTE3MDMwOTIzNDg1MFoXDTM3MDMwNDIzNDg1MFowgaQxJDAiBgkqhkiG9w0BCQEWFUFkbWluaXN0cmF0b3JAV0lOMjAwODEQMA4GA1UEAxMHV0lOMjAwODElMCMGA1UECxMcSW50cnVzaW9uIFByZXZlbnRpb24gU3lzdGVtczETMBEGA1UEChMKTWNBZmVlIEluYzEUMBIGA1UEBxMLU2FudGEgQ2xhcmExCzAJBgNVBAgTAkNBMQswCQYDVQQGEwJVUzCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAK0LbxzsdKRtz1lF2sVoAOPjNw+thWYot9sPtSorBHkLkee5g1rIJjveha/7gI40ygNaBrh+cYPC+xQTr/cj6Yc4aN4rBTmNlqyd75Khq1hng91Us7qwKJezHFSidjFxegdMEdvul8f1AgvOOfJeNYCyhr1eX6sfKRYzIn7xp7qjndDXGK4AjVMIxdI28jkPQ9kteCsQG2qypvGFHUx99ZNfYBsBSbVUGr6WKcHogv7ADcoTZ8IbDUNkrGOx4H7MqpV2apDQgN0Y4KucH34V4knrobWeG/MWvRBkFH5p7z0FsJXJsUyIYlmB5w/hMC4dpX/lXN5AB5Apnhu1yYGVh6sCAwEAAaMhMB8wHQYDVR0OBBYEFCWET7OBnx7/n3s1uacBu+VYiRdlMA0GCSqGSIb3DQEBCwUAA4IBAQBv0Jd81YB2QCx/RYxJ1Iim8MFvc/dZ4r7EN9M7tWSFTqYCJYhUIOLDJqJQ2SrE4quXod/hio1EIMzYsGO0BKEHYB4ScT9F5DcQSOC4uuL161BB7cQkCrjpZvDYbzpeKgaGEy6Km+hinfrWMUSh7zjePBuquzD/UOpl92Ds3ZI79o9jjVo3ROgoznTnYgKGK8L1o+WVd+yQ2dykxqUfwO0D3A8v+gWjEBat24H1XoW7hFAPTwBH2axHkCX07BdRMN2nG7q0Edb+Z1rd+THgut3N5Wlo88N+Uw4yd8UkWYwZJszlgRvmU8X2ZaeTl59lJ4zGnRvC2gxwN2pX9lsAhZkU \n-----END CERTIFICATE-----
+${nsm-cer-body}=  -----BEGIN CERTIFICATE----- -----END CERTIFICATE-----
 
 # DA (daname, mcname, model, swname, domainName, encapType, vcname, vctype)
 ${da-name}=  default-DA
@@ -87,8 +87,8 @@ ${ds-selction}=  can be &apos;All&apos; without the quotes or specific hosts lik
 ${ds-selection-byhost}=  can be single host hosts:compute-node-name  or as a list with &apos;,&apos; as seperator hosts:compute-node-1,compute-node-2,...
 
 #next two are not needed for now:
-${ds-selection-byAZ}=  zone:    followed by a comma seperated list of availability zones
-${ds-selection-byHA}=  hostAggregate:  followed by a comma seperated list of host agregates
+${ds-selection-byAZ}=  zone:    followed by a comma-separated list of availability zones
+${ds-selection-byHA}=  hostAggregate:  followed by a comma-separated list of host aggregates
 
 
 ${ds-mgmt-net}=  mgmt-net
