@@ -54,7 +54,7 @@
   <concurrentBuild>false</concurrentBuild>
   <rootModule>
     <groupId>com.paloaltonetworks.osm</groupId>
-    <artifactId>PANMgrPlugin</artifactId>
+    <artifactId>Panorama</artifactId>
   </rootModule>
   <goals>clean install</goals>
   <aggregatorStyleBuild>true</aggregatorStyleBuild>
