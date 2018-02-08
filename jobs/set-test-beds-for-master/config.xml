@@ -48,7 +48,9 @@ java -jar target/revert-snapshot.jar  config-ocata.json
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command># =============== deploy OSC for Newton from master ===================
+      <command>. /etc/profile.d/proxy.sh
+
+# =============== deploy OSC for Newton from master ===================
 
 outputDir=/var/www/vsc-builds/master-all/
 echo outputDir $outputDir
