@@ -53,6 +53,8 @@ java -jar target/revert-snapshot.jar  config-ocata.json
 # =============== deploy OSC for Newton from master ===================
 
 outputDir=/var/www/vsc-builds/master-all/
+#outputDir=/var/www/vsc-builds/0.8.0-all/
+
 echo outputDir $outputDir
 buildVersion=`ls -t $outputDir | awk &apos;NR=1&apos; | head -1`
 echo buildVersion $buildVersion
