@@ -59,7 +59,7 @@ ESXI_HOST_IP=10.3.242.124
 DATASTORE_NAME=&apos;datatstore1&apos;
 NETWORK_NAME=&apos;VM Network&apos;
 echo -outputDir-buildVersion $outputDir$buildVersion
-OVF_NAME=`ls $outputDir$buildVersion | grep ovf | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;`
+OVF_NAME=`ls $outputDir$buildVersion | grep .tar | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;`
 OVF_PATH=$outputDir$buildVersion/$OVF_NAME
 echo $OVF_PATH
 #OSC_VM_NAME=`echo $OVF_NAME | cut -f 1 -d &apos;.&apos;`
@@ -71,7 +71,13 @@ OSC_VM_IP=10.3.241.211
 DATA_CENTER=&apos;Physical Datacenter&apos;
 HOST=10.3.242.124
 
-java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME &quot;$DATASTORE_NAME&quot; &quot;$NETWORK_NAME&quot; $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS
+#java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME &quot;$DATASTORE_NAME&quot; &quot;$NETWORK_NAME&quot; $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS
+##Use a unique Docker server 10.3.242.16 and ssh to it without password:
+ssh -l ubuntu 10.3.242.16
+##Use scp without password input, the scppass to get the tar file:
+sshpass -p &quot;admin123&quot; scp jenkins@10.3.240.52:$OVF_PATH
+
+
 sleep 240
 
 
