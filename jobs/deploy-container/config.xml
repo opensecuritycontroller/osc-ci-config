@@ -78,9 +78,13 @@ HOST=10.3.242.124
 sshpass -p &quot;admin123&quot; scp $OVF_PATH ubuntu@10.3.242.16:/home/ubuntu/.
 
 numContainers=`ssh ubuntu@10.3.242.16 docker ps | grep imagename | wc -l`
-
-if [ ${numContainers} &gt; 0 ]
+echo ${numContainers}
+    
+if [ &quot;${numContainers}&quot; = &quot;0&quot; ]
 then
+	echo nothing to delete
+else
+	echo deleting containers
     ssh ubuntu@10.3.242.16 docker stop $(ssh ubuntu@10.3.242.16 docker ps -a -q) 
 fi
 
