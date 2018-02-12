@@ -75,7 +75,7 @@ HOST=10.3.242.124
 ##Use a unique Docker server 10.3.242.16 and ssh to it without password:
 ssh -l ubuntu 10.3.242.16
 ##Use scp without password input, the scppass to get the tar file:
-sshpass -p &quot;admin123&quot; scp jenkins@10.3.240.52:$OVF_PATH
+sshpass -p &quot;admin123&quot; scp $OVF_PATH ubuntu@10.3.242.16:/home/ubuntu/.
 
 
 sleep 240
