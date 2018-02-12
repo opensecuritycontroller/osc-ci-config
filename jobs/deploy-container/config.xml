@@ -73,12 +73,12 @@ HOST=10.3.242.124
 
 #java -jar /var/tmp/deploy-ovf.jar $VSPHERE_SDK_URL &quot;$VSPHERE_USER&quot; &quot;$VSPHERE_PASSWORD&quot; $ESXI_HOST_IP $OVF_PATH $OSC_VM_NAME &quot;$DATASTORE_NAME&quot; &quot;$NETWORK_NAME&quot; $OSC_VM_IP $OSC_VM_NETMASK $OSC_VM_GATEWAY $OSC_VM_DNS
 ##Use a unique Docker server 10.3.242.16 and ssh to it without password:
-ssh -l ubuntu 10.3.242.16
+#ssh -l ubuntu 10.3.242.16
 ##Use scp without password input, the scppass to get the tar file:
 sshpass -p &quot;admin123&quot; scp $OVF_PATH ubuntu@10.3.242.16:/home/ubuntu/.
 
 #ssh ubuntu@10.3.242.16 docker ps
-ssh ubuntu@10.3.242.1 docker stop $(docker ps -a -q) 
+ssh ubuntu@10.3.242.16 docker stop $(ssh ubuntu@10.3.242.16 docker ps -a -q) 
 
 ssh ubuntu@10.3.242.16 docker load -i osc-docker.tar
 
