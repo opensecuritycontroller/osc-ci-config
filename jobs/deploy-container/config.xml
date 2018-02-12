@@ -77,6 +77,12 @@ ssh -l ubuntu 10.3.242.16
 ##Use scp without password input, the scppass to get the tar file:
 sshpass -p &quot;admin123&quot; scp $OVF_PATH ubuntu@10.3.242.16:/home/ubuntu/.
 
+#ssh ubuntu@10.3.242.16 docker ps
+ssh ubuntu@10.3.242.1 docker stop $(docker ps -a -q) 
+
+ssh ubuntu@10.3.242.16 docker load -i osc-docker.tar
+
+ssh ubuntu@10.3.242.16 docker run -p 443:443 -p 8090:8090 -dit --mount source=osc-vol,target=/opt/vmidc/bin/data osc-docker-image:osc
 
 sleep 240
 
