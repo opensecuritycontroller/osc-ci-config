@@ -77,7 +77,7 @@ HOST=10.3.242.124
 ##Use scp without password input, the scppass to get the tar file:
 sshpass -p &quot;admin123&quot; scp $OVF_PATH ubuntu@10.3.242.16:/home/ubuntu/.
 
-numContainers=`ssh ubuntu@10.3.242.16 docker ps | grep imagename | wc -l`
+numContainers=`ssh ubuntu@10.3.242.16 docker ps | grep  osc-docker-image | wc -l`
 echo ${numContainers}
     
 if [ &quot;${numContainers}&quot; = &quot;0&quot; ]
