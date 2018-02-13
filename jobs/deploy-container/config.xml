@@ -85,7 +85,7 @@ then
 	echo nothing to delete
 else
 	echo deleting containers
-    containerIDs= `ssh ubuntu@10.3.242.16 docker ps -a -q`
+    containerIDs= `ssh ubuntu@10.3.242.16 docker ps -a -q`
     ssh ubuntu@10.3.242.16 docker stop ${containerIDs}
 fi
 
