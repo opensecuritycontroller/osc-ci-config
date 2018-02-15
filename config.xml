@@ -319,6 +319,7 @@
       <jobNames>
         <comparator class="hudson.util.CaseInsensitiveComparator"/>
         <string>master_klocwork_pipe</string>
+        <string>osc-container</string>
         <string>osc-core</string>
         <string>osc-nuage-plugin</string>
         <string>osc-ovf</string>
