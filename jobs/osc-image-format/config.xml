@@ -160,6 +160,14 @@
         }
     }
     
+    stage(&apos;Build DOCKER&apos;) {
+        env.JAVA_HOME=&quot;${tool name: &apos;Java 8.121&apos;, type: &apos;jdk&apos;}&quot;
+        env.PATH=&quot;${env.JAVA_HOME}/bin:${env.PATH}&quot;
+        dir (&apos;osc-core&apos;) {
+             sh &apos;ant dockerimage -Dall=&apos;+all
+        }
+    }
+    
     stage(&apos;Publish&apos;) {
        dir (&apos;osc-core&apos;) {
             buildVersion = sh(script: &quot;ls | grep Build* | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;&quot;, returnStdout: true)
