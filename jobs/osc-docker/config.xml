@@ -43,12 +43,11 @@
   </triggers>
   <concurrentBuild>false</concurrentBuild>
   <builders>
-    <hudson.tasks.Ant plugin="ant@1.5">
-      <targets>dockerimage</targets>
-      <antName>default ant</antName>
-    </hudson.tasks.Ant>
     <hudson.tasks.Shell>
-      <command>sudo mv -v Build* /var/www/vsc-builds/master</command>
+      <command>export http_proxy=http://proxy-us.intel.com:911
+export https_proxy=http://proxy-us.intel.com:912
+ant dockerImageBuild
+sudo mv -v Build* /var/www/vsc-builds/master</command>
     </hudson.tasks.Shell>
     <EnvInjectBuilder plugin="envinject@1.93.1">
       <info/>
