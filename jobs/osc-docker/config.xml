@@ -47,7 +47,7 @@
       <command>export http_proxy=http://proxy-us.intel.com:911
 export https_proxy=http://proxy-us.intel.com:912
 ant dockerImageBuild
-sudo mv -v Build* /var/www/vsc-builds/master</command>
+sudo mv -v Build* /var/www/vsc-builds/master-docker</command>
     </hudson.tasks.Shell>
     <EnvInjectBuilder plugin="envinject@1.93.1">
       <info/>
