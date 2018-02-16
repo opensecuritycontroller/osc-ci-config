@@ -51,10 +51,7 @@
       <command>sudo mv -v Build* /var/www/vsc-builds/master</command>
     </hudson.tasks.Shell>
     <EnvInjectBuilder plugin="envinject@1.93.1">
-      <info>
-        <propertiesContent>http_proxy=http://proxy-us.intel.com:911
-https_proxy=http://proxy-us.intel.com:912</propertiesContent>
-      </info>
+      <info/>
     </EnvInjectBuilder>
   </builders>
   <publishers>
@@ -111,5 +108,13 @@ all=true</properties>
       </configs>
     </hudson.plugins.parameterizedtrigger.BuildTrigger>
   </publishers>
-  <buildWrappers/>
+  <buildWrappers>
+    <EnvInjectBuildWrapper plugin="envinject@1.93.1">
+      <info>
+        <propertiesContent>http_proxy=http://proxy-us.intel.com:911
+https_proxy=http://proxy-us.intel.com:912</propertiesContent>
+        <loadFilesFromMaster>false</loadFilesFromMaster>
+      </info>
+    </EnvInjectBuildWrapper>
+  </buildWrappers>
 </project>
