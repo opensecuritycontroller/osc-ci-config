@@ -409,6 +409,7 @@
         <string>Automation-Parameterized-Config</string>
         <string>Automation-Sanity-Newton</string>
         <string>Automation-Sanity-Ocata</string>
+        <string>set-containers-testbeds</string>
         <string>set-test-beds-for-master</string>
       </jobNames>
       <jobFilters/>
