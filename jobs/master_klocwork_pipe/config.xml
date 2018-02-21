@@ -41,8 +41,7 @@ PATH+=/home/jenkins/jdk1.8.0_121/bin/:/home/jenkins/klockwork/kw113/bin</propert
         
         // clean operation if required
         //sh &apos;rm * -rf&apos;
-        // test
-        
+
         //sh &apos;mkdir -p osc-core&apos;
         dir (&apos;osc-core&apos;) {
             git credentialsId: &apos;oscservice-token&apos;, url: &apos;https://github.com/opensecuritycontroller/osc-core.git&apos;
