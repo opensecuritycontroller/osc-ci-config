@@ -38,16 +38,15 @@
       <command>cd /var/tmp/osc-tools/revert-snapshot/revert-clean
 
 java -jar target/revert-snapshot.jar  config-newton.json
-sudo su
 java -jar target/revert-snapshot.jar  config-container1.json
-</command>
+exit 0</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
       <command>cd /var/tmp/osc-tools/revert-snapshot/revert-clean
 
 java -jar target/revert-snapshot.jar  config-ocata.json
-sudo su
 java -jar target/revert-snapshot.jar  config-container2.json
+exit 0
 
 </command>
     </hudson.tasks.Shell>
