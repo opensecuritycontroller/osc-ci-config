@@ -67,9 +67,9 @@ echo $TAR_PATH
 # =============== deploy OSC for Ocata from master ===================
 CONTAINER_IP=10.3.242.1
 ##Use scp without password input, the scppass to get the tar file:
-sshpass -p &quot;admin123&quot; scp $TAR_PATH ubuntu@10.3.242.16:/home/ubuntu/.
+sshpass -p &quot;admin123&quot; scp $TAR_PATH ubuntu@${CONTAINER_IP}:/home/ubuntu/.
 
-numContainers=`ssh ubuntu@10.3.242.16 docker ps | grep osc-docker-image | wc -l`
+numContainers=`ssh ubuntu@${CONTAINER_IP} docker ps | grep osc-docker-image | wc -l`
 echo ${numContainers}
     
 if [ &quot;${numContainers}&quot; = &quot;0&quot; ]
