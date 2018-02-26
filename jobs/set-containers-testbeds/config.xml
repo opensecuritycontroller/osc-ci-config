@@ -65,7 +65,7 @@ TAR_PATH=$outputDir$buildVersion/$TAR_NAME
 echo $TAR_PATH
 
 # =============== deploy OSC for Ocata from master ===================
-CONTAINER_IP=10.3.242.16
+CONTAINER_IP=10.3.242.9
 ##Use scp without password input, the scppass to get the tar file:
 sshpass -p &quot;admin123&quot; scp $TAR_PATH ubuntu@${CONTAINER_IP}:/home/ubuntu/.
 
