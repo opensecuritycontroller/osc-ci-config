@@ -53,6 +53,8 @@ exit 0
     <hudson.tasks.Shell>
       <command>. /etc/profile.d/proxy.sh
 
+sleep 400   # it takes the dockers 5+ minutes to go up
+
 # =============== take OSC container from build ===================
 
 outputDir=/var/www/vsc-builds/container/
@@ -103,8 +105,6 @@ fi
 ssh ubuntu@${CONTAINER_IP} docker load -i osc-docker.tar
 ssh ubuntu@${CONTAINER_IP} docker run -p 443:443 -p 8090:8090 -dit --mount source=osc-vol,target=/opt/vmidc/bin/data osc-docker-image:osc
 
-
-sleep 240
 
 python3 /var/tmp/osc-tools/check-openstack-health/check-ocata-health.py
 echo $?
