@@ -66,26 +66,6 @@ TAR_NAME=`ls $outputDir$buildVersion | grep .tar | tr -d &apos;\r&apos; | tr -d 
 TAR_PATH=$outputDir$buildVersion/$TAR_NAME
 echo $TAR_PATH
 
-# =============== deploy OSC for Ocata from master ===================
-CONTAINER_IP=10.3.242.9
-##Use scp without password input, the scppass to get the tar file:
-sshpass -p &quot;admin123&quot; scp $TAR_PATH ubuntu@${CONTAINER_IP}:/home/ubuntu/.
-
-numContainers=`ssh ubuntu@${CONTAINER_IP} docker ps | grep osc-docker-image | wc -l`
-echo ${numContainers}
-    
-if [ &quot;${numContainers}&quot; = &quot;0&quot; ]
-then
-	echo nothing to delete
-else
-	echo deleting containers
-    containerIDs=`ssh ubuntu@${CONTAINER_IP} docker ps -a -q`
-    ssh ubuntu@${CONTAINER_IP} docker stop ${containerIDs}
-fi
-
-ssh ubuntu@${CONTAINER_IP} docker load -i osc-docker.tar
-ssh ubuntu@${CONTAINER_IP} docker run -p 443:443 -p 8090:8090 -dit --mount source=osc-vol,target=/opt/vmidc/bin/data osc-docker-image:osc
-
 # =============== deploy OSC for Newton from master ===================
 CONTAINER_IP=10.3.242.1
 sshpass -p &quot;admin123&quot; scp $TAR_PATH ubuntu@${CONTAINER_IP}:/home/ubuntu/.
@@ -106,11 +86,28 @@ ssh ubuntu@${CONTAINER_IP} docker load -i osc-docker.tar
 ssh ubuntu@${CONTAINER_IP} docker run -p 443:443 -p 8090:8090 -dit --mount source=osc-vol,target=/opt/vmidc/bin/data osc-docker-image:osc
 
 
-python3 /var/tmp/osc-tools/check-openstack-health/check-ocata-health.py
-echo $?
+# =============== deploy OSC for Ocata from master ===================
+CONTAINER_IP=10.3.242.9
+##Use scp without password input, the scppass to get the tar file:
+sshpass -p &quot;admin123&quot; scp $TAR_PATH ubuntu@${CONTAINER_IP}:/home/ubuntu/.
 
-exit 0
-sleep 240
+numContainers=`ssh ubuntu@${CONTAINER_IP} docker ps | grep osc-docker-image | wc -l`
+echo ${numContainers}
+    
+if [ &quot;${numContainers}&quot; = &quot;0&quot; ]
+then
+	echo nothing to delete
+else
+	echo deleting containers
+    containerIDs=`ssh ubuntu@${CONTAINER_IP} docker ps -a -q`
+    ssh ubuntu@${CONTAINER_IP} docker stop ${containerIDs}
+fi
+
+ssh ubuntu@${CONTAINER_IP} docker load -i osc-docker.tar
+ssh ubuntu@${CONTAINER_IP} docker run -p 443:443 -p 8090:8090 -dit --mount source=osc-vol,target=/opt/vmidc/bin/data osc-docker-image:osc
+
+
+# =============== checking Openstacks environments ===================
 
 python3 /var/tmp/osc-tools/check-openstack-health/check-newton-health.py
 echo $?
