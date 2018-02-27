@@ -57,7 +57,8 @@ sleep 400   # it takes the dockers 5+ minutes to go up
 
 # =============== take OSC container from build ===================
 
-outputDir=/var/www/vsc-builds/container/
+#outputDir=/var/www/vsc-builds/container/
+outputDir=/var/www/vsc-builds/master-all/
 echo outputDir $outputDir
 buildVersion=`ls -t $outputDir | awk &apos;NR=1&apos; | head -1`
 echo buildVersion $buildVersion
