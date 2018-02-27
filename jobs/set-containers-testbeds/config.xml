@@ -87,7 +87,7 @@ ssh ubuntu@${CONTAINER_IP} docker run -p 443:443 -p 8090:8090 -dit --mount sourc
 
 
 # =============== deploy OSC for Ocata from master ===================
-CONTAINER_IP=10.3.242.9
+CONTAINER_IP=10.3.242.14
 ##Use scp without password input, the scppass to get the tar file:
 sshpass -p &quot;admin123&quot; scp $TAR_PATH ubuntu@${CONTAINER_IP}:/home/ubuntu/.
 
