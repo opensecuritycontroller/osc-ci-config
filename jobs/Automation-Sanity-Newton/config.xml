@@ -76,7 +76,7 @@ cd robot
 #env
 
 echo running automation on Newton
-pybot -d ../results -v testbed: and  SanityWithSFC.robot</command>
+pybot -d ../results -v testbed:104.robot SanityWithSFC.robot</command>
     </hudson.tasks.Shell>
   </builders>
   <publishers>
