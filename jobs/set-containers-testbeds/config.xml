@@ -53,7 +53,7 @@ exit 0
     <hudson.tasks.Shell>
       <command>. /etc/profile.d/proxy.sh
 
-sleep 900   # it takes the dockers 5+ minutes to go up
+sleep 500   # it takes the dockers 5+ minutes to go up
 
 # =============== take OSC container from build ===================
 
@@ -109,6 +109,8 @@ ssh ubuntu@${CONTAINER_IP} docker run -p 443:443 -p 8090:8090 -dit --mount sourc
 
 
 # =============== checking Openstacks environments ===================
+
+sleep 300    #waiting for the OSC containers to be active
 
 python3 /var/tmp/osc-tools/check-openstack-health/check-newton-health.py
 echo $?
