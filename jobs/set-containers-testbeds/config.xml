@@ -53,7 +53,7 @@ exit 0
     <hudson.tasks.Shell>
       <command>. /etc/profile.d/proxy.sh
 
-sleep 600   # it takes the dockers 5+ minutes to go up
+sleep 900   # it takes the dockers 5+ minutes to go up
 
 # =============== take OSC container from build ===================
 
