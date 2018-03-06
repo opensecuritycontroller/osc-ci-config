@@ -1,0 +1,135 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <jenkins.model.BuildDiscarderProperty>
+      <strategy class="hudson.tasks.LogRotator">
+        <daysToKeep>-1</daysToKeep>
+        <numToKeep>20</numToKeep>
+        <artifactDaysToKeep>-1</artifactDaysToKeep>
+        <artifactNumToKeep>-1</artifactNumToKeep>
+      </strategy>
+    </jenkins.model.BuildDiscarderProperty>
+  </properties>
+  <scm class="hudson.scm.NullSCM"/>
+  <assignedNode>master</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <jdk>Java 8.121</jdk>
+  <triggers>
+    <jenkins.triggers.ReverseBuildTrigger>
+      <spec></spec>
+      <upstreamProjects>osc-image-format</upstreamProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+    </jenkins.triggers.ReverseBuildTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>cd /var/tmp/osc-tools/revert-snapshot/revert-clean
+
+java -jar target/revert-snapshot.jar  config-newton.json
+java -jar target/revert-snapshot.jar  config-container1.json
+exit 0</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>cd /var/tmp/osc-tools/revert-snapshot/revert-clean
+
+java -jar target/revert-snapshot.jar  config-ocata.json
+java -jar target/revert-snapshot.jar  config-container2.json
+exit 0
+
+</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command>. /etc/profile.d/proxy.sh
+
+sleep 500   # it takes the dockers 5+ minutes to go up
+
+# =============== take OSC container from build ===================
+
+#outputDir=/var/www/vsc-builds/container/
+outputDir=/var/www/vsc-builds/master-all/
+echo outputDir $outputDir
+buildVersion=`ls -t $outputDir | awk &apos;NR=1&apos; | head -1`
+echo buildVersion $buildVersion
+echo -outputDir-buildVersion $outputDir$buildVersion
+TAR_NAME=`ls $outputDir$buildVersion | grep .tar | tr -d &apos;\r&apos; | tr -d &apos;\n&apos;`
+TAR_PATH=$outputDir$buildVersion/$TAR_NAME
+echo $TAR_PATH
+
+# =============== deploy OSC for Newton from master ===================
+CONTAINER_IP=10.3.242.1
+sshpass -p &quot;admin123&quot; scp $TAR_PATH ubuntu@${CONTAINER_IP}:/home/ubuntu/.
+
+numContainers=`ssh ubuntu@${CONTAINER_IP} docker ps | grep osc-docker-image | wc -l`
+echo ${numContainers}
+    
+if [ &quot;${numContainers}&quot; = &quot;0&quot; ]
+then
+	echo nothing to delete
+else
+	echo deleting containers
+    containerIDs=`ssh ubuntu@${CONTAINER_IP} docker ps -a -q`
+    ssh ubuntu@${CONTAINER_IP} docker stop ${containerIDs}
+fi
+
+ssh ubuntu@${CONTAINER_IP} docker load -i osc-docker.tar
+ssh ubuntu@${CONTAINER_IP} docker run -p 443:443 -p 8090:8090 -dit --mount source=osc-vol,target=/opt/vmidc/bin/data osc-docker-image:osc
+
+
+# =============== deploy OSC for Ocata from master ===================
+CONTAINER_IP=10.3.242.14
+##Use scp without password input, the scppass to get the tar file:
+sshpass -p &quot;admin123&quot; scp $TAR_PATH ubuntu@${CONTAINER_IP}:/home/ubuntu/.
+
+numContainers=`ssh ubuntu@${CONTAINER_IP} docker ps | grep osc-docker-image | wc -l`
+echo ${numContainers}
+    
+if [ &quot;${numContainers}&quot; = &quot;0&quot; ]
+then
+	echo nothing to delete
+else
+	echo deleting containers
+    containerIDs=`ssh ubuntu@${CONTAINER_IP} docker ps -a -q`
+    ssh ubuntu@${CONTAINER_IP} docker stop ${containerIDs}
+fi
+
+ssh ubuntu@${CONTAINER_IP} docker load -i osc-docker.tar
+ssh ubuntu@${CONTAINER_IP} docker run -p 443:443 -p 8090:8090 -dit --mount source=osc-vol,target=/opt/vmidc/bin/data osc-docker-image:osc
+
+
+# =============== checking Openstacks environments ===================
+
+sleep 300    #waiting for the OSC containers to be active
+
+python3 /var/tmp/osc-tools/check-openstack-health/check-newton-health.py
+echo $?
+
+python3 /var/tmp/osc-tools/check-openstack-health/check-ocata-health.py
+echo $?
+
+exit 0</command>
+    </hudson.tasks.Shell>
+    <hudson.tasks.Shell>
+      <command></command>
+    </hudson.tasks.Shell>
+  </builders>
+  <publishers>
+    <hudson.tasks.Mailer plugin="mailer@1.20">
+      <recipients>yaron.choma@intel.com</recipients>
+      <dontNotifyEveryUnstableBuild>false</dontNotifyEveryUnstableBuild>
+      <sendToIndividuals>false</sendToIndividuals>
+    </hudson.tasks.Mailer>
+  </publishers>
+  <buildWrappers/>
+</project>
